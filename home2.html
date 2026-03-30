@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KirkaDay & RubyFizz | Premium Hibiscus System</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ruby: {
+                            500: '#E53935',
+                            600: '#D32F2F',
+                            700: '#C62828',
+                            800: '#B71C1C',
+                            900: '#7F0000',
+                        },
+                        matte: '#0a0a0a',
+                        cream: '#F9F6F0',
+                        charcoal: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay {
+            transition-delay: 0.2s;
+        }
+
+        /* Subtle Image Zoom on Hover */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom { transition: transform 0.7s ease; }
+        .img-zoom-container:hover .img-zoom { transform: scale(1.05); }
+
+        /* Remove default input styling */
+        input:focus { outline: none; box-shadow: none; }
+    </style>
+</head>
+<body class="antialiased selection:bg-ruby-700 selection:text-white">
+
+    <!-- 1. Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-matte/90 border-b border-white/5" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="font-serif text-2xl font-bold tracking-tight text-white nav-text transition-colors">KirkaDay</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#system" class="text-sm font-medium text-white/60 hover:text-white transition-colors hidden md:block nav-text">The System</a>
+                <a href="#early-access" class="bg-ruby-700 hover:bg-ruby-600 text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors">Get Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section (The Hook) -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-24 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 min-h-[90vh]">
+        <div class="w-full lg:w-1/2 flex flex-col justify-center reveal z-10">
+            <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Introducing the KirkaDay System</span>
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Soda is dead.<br>
+                <span class="text-white/50">Real hibiscus</span><br>
+                is here.
+            </h1>
+            <p class="text-lg md:text-xl text-white/70 font-sans font-light leading-relaxed mb-10 max-w-lg">
+                Meet <strong class="text-white font-medium">RubyFizz</strong>—the unapologetically bold sparkling soda—and <strong class="text-white font-medium">KirkaDay</strong>, your daily functional foundation. One powerful flower, crafted for your entire day.
+            </p>
+
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md w-full email-form">
+                <input type="email" required placeholder="Enter your email" class="flex-1 bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:border-ruby-500 transition-colors">
+                <button type="submit" class="bg-ruby-700 hover:bg-ruby-600 text-white font-medium px-8 py-4 rounded-full transition-colors whitespace-nowrap">
+                    Be the first to try both
+                </button>
+            </form>
+            <p class="text-sm text-ruby-400 mt-4 font-sans font-medium hidden success-message">✓ You're on the list. Keep an eye on your inbox.</p>
+        </div>
+
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end reveal reveal-delay relative">
+            <div class="absolute inset-0 bg-gradient-to-tr from-ruby-900/30 to-transparent z-0 mix-blend-overlay blur-3xl rounded-full"></div>
+            <!-- Dual Can Mockup - showing both KirkaDay and RubyFizz -->
+            <img src="ChatGPT%20Image%20Mar%2030,%202026,%2011_18_25%20AM.png" alt="KirkaDay and RubyFizz Cans Side by Side" class="w-full max-w-[500px] h-auto object-contain z-10 drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500 rounded-xl">
+        </div>
+    </section>
+
+    <!-- 3. The Transition (Visual Bridge) -->
+    <section class="w-full relative h-[60vh] md:h-[70vh] flex items-center justify-center reveal">
+        <!-- Popping Can Tab Image Background for visceral energy -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="images/1ba13668e30a13fa32c2f25d0b2d6736.webp" alt="Popping can tab with condensation" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-matte/85"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">One ingredient.<br><span class="text-ruby-500">Two distinct experiences.</span></h2>
+            <p class="text-lg md:text-xl text-white/80 font-sans font-light leading-relaxed max-w-2xl mx-auto">
+                You don't live in just one mode, and neither should your beverage. We took the finest global hibiscus and developed two perfect formats: one to ground your morning, one to spark your evening.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. The Dual System (Side-by-Side Comparison) -->
+    <section id="system" class="w-full flex flex-col md:flex-row min-h-screen border-t border-white/5">
+        <!-- LEFT: KirkaDay (Cream/Still - The Foundation) -->
+        <div class="w-full md:w-1/2 bg-cream text-charcoal py-24 px-8 lg:px-16 flex flex-col justify-center group section-cream transition-colors duration-500">
+            <div class="max-w-md mx-auto md:ml-auto md:mr-0 lg:mr-12 reveal">
+                <span class="text-ruby-700 text-sm font-bold tracking-[0.2em] uppercase mb-3 block">KirkaDay</span>
+                <h2 class="font-serif text-5xl lg:text-6xl font-bold mb-4">THE DAILY STILL</h2>
+
+                <ul class="space-y-4 mb-12 font-sans text-charcoal/80 font-medium text-lg border-l-2 border-ruby-300 pl-6">
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-600 flex-shrink-0"></span> Clean Hydration</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-600 flex-shrink-0"></span> Zero Carbonation</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-600 flex-shrink-0"></span> Antioxidant Rich</li>
+                    <li class="flex items-center gap-3 text-ruby-700 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-ruby-600 flex-shrink-0"></span> Your 10 AM Reset</li>
+                </ul>
+
+                <div class="aspect-square w-full rounded-2xl overflow-hidden img-zoom-container shadow-xl">
+                    <!-- Clean Red Pour Image -->
+                    <img src="images/jpg.jpeg" alt="Smooth still red liquid pour" class="w-full h-full object-cover img-zoom mix-blend-multiply">
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: RubyFizz (Black/Sparkling - The Hook) -->
+        <div class="w-full md:w-1/2 bg-matte text-white py-24 px-8 lg:px-16 flex flex-col justify-center group section-dark">
+            <div class="max-w-md mx-auto md:mr-auto md:ml-0 lg:ml-12 reveal">
+                <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-3 block">RubyFizz</span>
+                <h2 class="font-serif text-5xl lg:text-6xl font-bold mb-4">THE SOCIAL SPARK</h2>
+
+                <ul class="space-y-4 mb-12 font-sans text-white/80 font-medium text-lg border-l-2 border-ruby-900 pl-6">
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-500 flex-shrink-0"></span> Crisp Carbonation</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-500 flex-shrink-0"></span> Bold Bite</li>
+                    <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 rounded-full bg-ruby-500 flex-shrink-0"></span> Soda Alternative</li>
+                    <li class="flex items-center gap-3 text-ruby-400 font-bold"><span class="w-1.5 h-1.5 rounded-full bg-ruby-500 flex-shrink-0"></span> Your 6 PM Ritual</li>
+                </ul>
+
+                <div class="aspect-square w-full rounded-2xl overflow-hidden img-zoom-container bg-zinc-900 shadow-[0_0_40px_rgba(229,57,53,0.15)]">
+                    <!-- Splashing Glass Image -->
+                    <img src="ChatGPT%20Image%20Mar%2030,%202026,%2011_05_28%20AM.png" alt="Sparkling hibiscus splashing in a glass" class="w-full h-full object-cover img-zoom mix-blend-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. The KirkaDay Focus (Deep Dive into Foundation) -->
+    <section class="py-24 md:py-32 px-6 bg-cream text-charcoal relative overflow-hidden section-cream">
+        <!-- Subtle Mason Jar Background Texture -->
+        <div class="absolute inset-0 opacity-[0.04] mix-blend-multiply bg-[url('Agua-de-Jamaica-Iced-Hibiscus-Tea-Tammy-Lynn-1x1-1-2000-7f99b1ed08aa4f6397a2113e6c9bf972.jpg')] bg-cover bg-center"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 order-2 lg:order-1 reveal img-zoom-container rounded-2xl overflow-hidden shadow-xl">
+                <!-- Mason Jar Image indicating stillness/tradition -->
+                <img src="images/Agua-de-Jamaica-Iced-Hibiscus-Tea-Tammy-Lynn-1x1-1-2000-7f99b1ed08aa4f6397a2113e6c9bf972.jpg" alt="Traditional Agua de Jamaica in a mason jar" class="w-full aspect-square md:aspect-[4/3] object-cover img-zoom">
+            </div>
+
+            <div class="w-full lg:w-1/2 order-1 lg:order-2 reveal">
+                <span class="text-ruby-700 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">The Foundation</span>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">A cleaner daily ritual.</h2>
+                <p class="text-lg text-charcoal/80 font-sans font-light leading-relaxed mb-6">
+                    KirkaDay is the flagship. It’s a still, highly functional, deeply refreshing botanical drink designed for daily consumption.
+                </p>
+                <p class="text-lg text-charcoal/80 font-sans font-light leading-relaxed">
+                    No sugar crashes. No synthetic caffeine. Just the pure, restorative power of real hibiscus to keep you sharp and hydrated from morning to afternoon.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. The Social Ritual Section -->
+    <section class="py-24 md:py-32 bg-matte px-6 relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 reveal img-zoom-container rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(229,57,53,0.1)]">
+                <img src="images/the-non-alcoholic-drinks-industry-is-toasting.jpg" alt="Friends clinking glasses" class="w-full aspect-[4/3] object-cover img-zoom">
+            </div>
+            <div class="w-full lg:w-1/2 reveal">
+                <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Drink Better</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Your new favorite social habit.</h2>
+                <p class="text-lg text-white/70 font-sans font-light leading-relaxed">
+                    Crisp enough to cut through the Texas heat. Complex enough to replace your evening cocktail. RubyFizz is designed for the clinking of glasses, long dinners, and sharp focus the morning after.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. The Origin Story -->
+    <section class="py-24 md:py-32 bg-charcoal text-white px-6 section-dark border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 reveal">
+                <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Our Roots</span>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">A generational flavor, bottled for today.</h2>
+                <p class="text-lg text-white/70 font-sans font-light leading-relaxed mb-6">
+                    Whether you know it as Karkadeh, Agua de Jamaica, or Sorrel, hibiscus has been the ultimate symbol of hospitality across the globe for centuries.
+                </p>
+                <p class="text-lg text-white/70 font-sans font-light leading-relaxed">
+                    We didn’t invent it. We just stripped away the excess sugar and perfected the balance for the modern palate.
+                </p>
+            </div>
+            <div class="w-full lg:w-1/2 reveal">
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden img-zoom-container shadow-2xl border border-white/5">
+                    <!-- Raw Hibiscus Flower Image -->
+                    <img src="images/fs1298-main-2.jpg" alt="Raw Hibiscus Flower" class="w-full h-full object-cover img-zoom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Unified CTA Section -->
+    <section id="early-access" class="py-24 md:py-32 px-6 bg-matte text-center border-t border-white/10 relative overflow-hidden section-dark">
+        <!-- Subtle ruby glow behind CTA -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-ruby-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto relative z-10 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl font-bold mb-6">The first batch is brewing.</h2>
+            <p class="text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                Production is limited. Drop your email to secure early access to both KirkaDay and RubyFizz before our Houston launch.
+            </p>
+
+            <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto w-full email-form">
+                <input type="email" required placeholder="Enter your email address" class="flex-1 bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:border-ruby-500 transition-colors">
+                <button type="submit" class="bg-ruby-700 hover:bg-ruby-600 text-white font-medium px-10 py-4 rounded-full transition-colors whitespace-nowrap">
+                    Join the Waitlist
+                </button>
+            </form>
+            <p class="text-sm text-ruby-400 mt-4 font-sans font-medium hidden success-message">✓ You're on the list to try both. Keep an eye on your inbox.</p>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer class="bg-black py-12 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl font-bold text-white block mb-1">KirkaDay</span>
+                <span class="text-xs text-white/40 uppercase tracking-wider">The Hibiscus System</span>
+            </div>
+
+            <div class="flex gap-6 text-sm text-white/60 font-medium">
+                <a href="#system" class="hover:text-white transition-colors">Our Products</a>
+                <a href="#early-access" class="hover:text-white transition-colors">Early Access</a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 font-sans">
+            <p>&copy; 2026 KirkaDay LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Scroll Reveal Animations
+            const reveals = document.querySelectorAll(".reveal");
+            const revealOptions = { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Trigger only once per element
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => revealOnScroll.observe(reveal));
+
+            // 2. Dynamic Navbar Color Logic (Dark to Light Transition)
+            const nav = document.getElementById("navbar");
+            const navTexts = document.querySelectorAll(".nav-text");
+            const creamSections = document.querySelectorAll('.section-cream');
+
+            window.addEventListener('scroll', () => {
+                let isOverCream = false;
+
+                // Check if the navbar overlaps with any section that has the light cream background
+                creamSections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 80 && rect.bottom >= 0) {
+                        isOverCream = true;
+                    }
+                });
+
+                if (isOverCream) {
+                    // Switch to light theme navbar
+                    nav.classList.remove('bg-matte/90', 'border-white/5');
+                    nav.classList.add('bg-cream/95', 'border-charcoal/10');
+                    navTexts.forEach(t => {
+                        t.classList.remove('text-white', 'text-white/60');
+                        t.classList.add('text-charcoal');
+                    });
+                } else {
+                    // Switch to dark theme navbar
+                    nav.classList.add('bg-matte/90', 'border-white/5');
+                    nav.classList.remove('bg-cream/95', 'border-charcoal/10');
+                    navTexts.forEach(t => {
+                        t.classList.add('text-white');
+                        t.classList.remove('text-charcoal');
+                    });
+                }
+            });
+
+            // 3. Form Submission Handling (Mock Success State)
+            const forms = document.querySelectorAll('.email-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('button');
+                    const msg = form.nextElementSibling;
+
+                    btn.innerText = "Processing...";
+                    btn.classList.add('opacity-70', 'cursor-not-allowed');
+
+                    // Simulate network request
+                    setTimeout(() => {
+                        form.classList.add('hidden'); // Hide form
+                        msg.classList.remove('hidden'); // Show success message
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
