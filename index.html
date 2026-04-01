@@ -73,17 +73,32 @@
 <body class="antialiased selection:bg-ruby-700 selection:text-white">
 
     <!-- 1. Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-matte/90 border-b border-white/5" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
+    <nav
+            class="fixed top-0 z-50 w-full border-b border-white/5 bg-matte/90 backdrop-blur-md transition-all duration-300"
+            id="navbar"
+    >
+        <div class="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+            <a href="/" class="flex items-center shrink-0">
                 <img
                         src="/images/kirkaday-logo.png"
                         alt="KirkaDay Logo"
-                        class="h-8 w-auto object-contain"
+                        class="block h-14 md:h-16 w-auto object-contain"
                 />
-            </div>            <div class="flex items-center gap-6">
-                <a href="#system" class="text-sm font-medium text-white/60 hover:text-white transition-colors hidden md:block nav-text">The System</a>
-                <a href="#early-access" class="bg-ruby-700 hover:bg-ruby-600 text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors">Get Early Access</a>
+            </a>
+
+            <div class="flex items-center gap-6">
+                <a
+                        href="#system"
+                        class="nav-text hidden text-sm font-medium text-white/60 transition-colors hover:text-white md:block"
+                >
+                    The System
+                </a>
+                <a
+                        href="#early-access"
+                        class="rounded-full bg-ruby-700 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ruby-600"
+                >
+                    Get Early Access
+                </a>
             </div>
         </div>
     </nav>
