@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RubyFizz | Premium Sparkling Hibiscus</title>
+
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config for Custom Brand Colors & Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ruby: {
+                            500: '#E53935',
+                            600: '#D32F2F',
+                            700: '#C62828',
+                            800: '#B71C1C',
+                            900: '#7F0000',
+                        },
+                        matte: '#0a0a0a',
+                        cream: '#F9F6F0',
+                        charcoal: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Animations */
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Scroll reveal classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Subtle image zoom effect on hover */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom {
+            transition: transform 0.7s ease;
+        }
+        .img-zoom-container:hover .img-zoom {
+            transform: scale(1.05);
+        }
+
+        /* Custom input styling to remove default webkit styles */
+        input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-ruby-700 selection:text-white">
+
+    <!-- 1. Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-matte/80 border-b border-white/5" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="font-serif text-2xl font-bold tracking-tight text-white">RubyFizz</span>
+                <span class="text-xs font-sans tracking-widest text-white/50 hidden sm:block mt-1 uppercase">By KirkaDay</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-sm font-medium text-white/40 cursor-not-allowed hover:text-white/60 transition-colors hidden md:block" title="Coming Soon">Shop</a>
+                <a href="#early-access" class="bg-ruby-700 hover:bg-ruby-600 text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors">Get Early Access</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20 min-h-[90vh]">
+        <!-- Text Column -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-center reveal">
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Deep Red.<br>
+                <span class="text-white/50">Zero Sugar.</span><br>
+                Real Hibiscus.
+            </h1>
+            <p class="text-lg md:text-xl text-white/70 font-sans font-light leading-relaxed mb-10 max-w-lg">
+                A sparkling hibiscus soda built for the modern palate. Rooted in centuries of tradition, brewed for absolute refreshment. No sugar crashes. No artificial nonsense.
+            </p>
+
+            <!-- Email Capture -->
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md w-full email-form" id="hero-form">
+                <input type="email" required placeholder="Enter your email" class="flex-1 bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:border-ruby-500 transition-colors">
+                <button type="submit" class="bg-ruby-700 hover:bg-ruby-600 text-white font-medium px-8 py-4 rounded-full transition-colors whitespace-nowrap">
+                    Claim First Batch
+                </button>
+            </form>
+            <p class="text-xs text-white/40 mt-4 font-sans tracking-wide form-message">Launching soon in Houston, TX. Be the first to taste.</p>
+        </div>
+
+        <!-- Image Column -->
+        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end reveal reveal-delay">
+            <div class="relative w-full max-w-[400px] lg:max-w-[500px] aspect-[4/5] img-zoom-container rounded-2xl">
+                <div class="absolute inset-0 bg-gradient-to-tr from-ruby-900/20 to-transparent z-10 mix-blend-overlay"></div>
+                <img src="images/52262858-3694-44EF-B2E7-93747B1117A1.jpeg" alt="RubyFizz Can Mockup" class="w-full h-full object-cover img-zoom">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. The Interstitial (Sensory Break) -->
+    <section class="w-full h-[60vh] md:h-[80vh] relative overflow-hidden reveal">
+        <img src="images/1ba13668e30a13fa32c2f25d0b2d6736.webp" alt="RubyFizz popping tab and condensation" class="w-full h-full object-cover object-center scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-matte via-transparent to-matte opacity-80"></div>
+    </section>
+
+    <!-- 4. The Positioning Section -->
+    <section class="py-24 md:py-32 px-6 bg-matte text-center max-w-4xl mx-auto reveal">
+        <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">The New Standard</span>
+        <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-8">Soda is dead.<br>Sparkling water is boring.</h2>
+        <p class="text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed max-w-2xl mx-auto">
+            You outgrew artificial syrups years ago, but generic sparkling water doesn't hit the spot when you want actual flavor. RubyFizz bridges the gap. It’s a full-sensory, unapologetically bold beverage that actually tastes like something—without the guilt.
+        </p>
+    </section>
+
+    <!-- 5. Ingredients & Benefits Section -->
+    <section class="py-20 md:py-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="w-full lg:w-1/2 order-2 lg:order-1 reveal img-zoom-container rounded-2xl overflow-hidden aspect-square relative bg-zinc-900">
+            <img src="images/pngtree-hibiscus-iced-tea-splashing-in-a-glass-png-image_15496480.png" alt="Hibiscus splashing in glass" class="w-full h-full object-cover img-zoom mix-blend-screen">
+        </div>
+
+        <div class="w-full lg:w-1/2 order-1 lg:order-2 reveal">
+            <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Brewed Bold</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">The power of the flower.</h2>
+            <p class="text-lg text-white/70 font-sans font-light leading-relaxed mb-10">
+                We don't use "natural flavors" to mimic hibiscus. We use the actual flower. Tart, crisp, and naturally complex, our sparkling hibiscus soda delivers a refreshing bite that wakes up your palate.
+            </p>
+
+            <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 text-ruby-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">0g Added Sugar</h4>
+                        <p class="text-white/60 text-sm font-light">Sweetened smartly. No sticky aftertaste.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 text-ruby-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Antioxidant Rich</h4>
+                        <p class="text-white/60 text-sm font-light">Naturally functional, straight from the botanical source.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 text-ruby-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Caffeine-Free</h4>
+                        <p class="text-white/60 text-sm font-light">Drink it at noon. Drink it at midnight.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center flex-shrink-0 text-ruby-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">Vibrant by Nature</h4>
+                        <p class="text-white/60 text-sm font-light">That deep ruby red? 100% real. No dyes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. The Heritage Section (Cream Background) -->
+    <section class="py-24 md:py-32 bg-cream text-charcoal transition-colors duration-1000 relative">
+        <!-- Subtle background texture using the mason jar image -->
+        <div class="absolute inset-0 opacity-5 mix-blend-multiply bg-[url('Agua-de-Jamaica-Iced-Hibiscus-Tea-Tammy-Lynn-1x1-1-2000-7f99b1ed08aa4f6397a2113e6c9bf972.jpg')] bg-cover bg-center"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 reveal">
+                <span class="text-ruby-700 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Our Roots</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">A generational flavor, bottled for today.</h2>
+                <p class="text-lg text-charcoal/70 font-sans font-light leading-relaxed mb-6">
+                    Whether you know it as Karkadeh, Agua de Jamaica, or Sorrel, hibiscus has been the ultimate symbol of hospitality and refreshment across the globe for centuries.
+                </p>
+                <p class="text-lg text-charcoal/70 font-sans font-light leading-relaxed">
+                    RubyFizz is brought to you by <strong>KirkaDay</strong>—a functional beverage house dedicated to taking time-tested global botanicals and making them fit your daily routine. We didn’t invent hibiscus tea. We just perfected the sparkle.
+                </p>
+            </div>
+
+            <div class="w-full lg:w-1/2 reveal">
+                <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden img-zoom-container shadow-2xl">
+                    <img src="images/fs1298-main-2.jpg" alt="Raw Hibiscus Flower" class="w-full h-full object-cover img-zoom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. The Social Ritual Section -->
+    <section class="py-24 md:py-32 bg-matte px-6 relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-1/2 reveal img-zoom-container rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(229,57,53,0.1)]">
+                <img src="images/the-non-alcoholic-drinks-industry-is-toasting.jpg" alt="Friends clinking glasses" class="w-full aspect-[4/3] object-cover img-zoom">
+            </div>
+            <div class="w-full lg:w-1/2 reveal">
+                <span class="text-ruby-500 text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Drink Better</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6">Your new favorite social habit.</h2>
+                <p class="text-lg text-white/70 font-sans font-light leading-relaxed">
+                    Crisp enough to cut through the Texas heat. Complex enough to replace your evening cocktail. RubyFizz is designed for the clinking of glasses, long dinners, and sharp focus the morning after.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Final CTA Section -->
+    <section id="early-access" class="py-24 md:py-32 px-6 bg-matte text-center border-t border-white/5 relative overflow-hidden">
+        <!-- Subtle radial gradient behind CTA -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[500px] bg-ruby-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto relative z-10 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl font-bold mb-6">The first batch is almost ready.</h2>
+            <p class="text-lg md:text-xl text-white/60 font-sans font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                Production is limited. Drop your email below to secure early access, exclusive pricing, and an invite to our Houston launch events.
+            </p>
+
+            <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto w-full email-form" id="footer-form">
+                <input type="email" required placeholder="Enter your email" class="flex-1 bg-white/5 border border-white/10 rounded-full px-6 py-4 text-white placeholder:text-white/40 focus:border-ruby-500 transition-colors">
+                <button type="submit" class="bg-ruby-700 hover:bg-ruby-600 text-white font-medium px-10 py-4 rounded-full transition-colors whitespace-nowrap">
+                    Notify Me
+                </button>
+            </form>
+            <p class="text-sm text-ruby-400 mt-4 font-sans font-medium hidden success-message">✓ You're on the list. Keep an eye on your inbox.</p>
+        </div>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer class="bg-black py-12 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl font-bold text-white block mb-1">RubyFizz</span>
+                <span class="text-xs text-white/40 uppercase tracking-wider">A KirkaDay Brand</span>
+            </div>
+
+            <div class="flex gap-6 text-sm text-white/60 font-medium">
+                <a href="#early-access" class="hover:text-white transition-colors">Early Access</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+                <a href="#" class="hover:text-white transition-colors">Wholesale Inquiries</a>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#" class="text-white/40 hover:text-white transition-colors">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-white/40 hover:text-white transition-colors">
+                    <span class="sr-only">TikTok</span>
+                    <svg class="w-5 h-5 mt-0.5" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 font-sans">
+            <p>&copy; 2026 KirkaDay LLC. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white/60">Privacy Policy</a>
+                <a href="#" class="hover:text-white/60">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Scroll Animations and Form Handling -->
+    <script>
+        // Intersection Observer for scroll reveal animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach((reveal) => {
+                revealOnScroll.observe(reveal);
+            });
+
+            // Handle fake form submissions
+            const forms = document.querySelectorAll('.email-form');
+            forms.forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('button');
+                    const input = form.querySelector('input');
+                    const msg = form.nextElementSibling;
+
+                    const originalText = btn.innerText;
+                    btn.innerText = "Processing...";
+                    btn.classList.add('opacity-70');
+
+                    setTimeout(() => {
+                        form.innerHTML = '';
+                        if(msg.classList.contains('form-message')) {
+                           msg.innerHTML = '<span class="text-ruby-400 font-medium">✓ You\'re on the list. Keep an eye on your inbox.</span>';
+                        } else {
+                           msg.classList.remove('hidden');
+                        }
+                    }, 800);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
