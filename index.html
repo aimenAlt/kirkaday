@@ -4,21 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KirkaDay | Sparkling Hibiscus Energy</title>
-<meta name="description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom, cinnamon and citrus, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
+<meta name="description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom and cinnamon, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
 <link rel="canonical" href="https://www.kirkaday.com/">
 <meta name="theme-color" content="#FCF7E9">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KirkaDay">
 <meta property="og:title" content="KirkaDay | Sparkling Hibiscus Energy">
-<meta property="og:description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom, cinnamon and citrus, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
+<meta property="og:description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom and cinnamon, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
 <meta property="og:url" content="https://www.kirkaday.com/">
 <meta property="og:image" content="https://www.kirkaday.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KirkaDay | Sparkling Hibiscus Energy">
-<meta name="twitter:description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom, cinnamon and citrus, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
+<meta name="twitter:description" content="Sparkling hibiscus energy made with the real flower steeped — tamarind, cardamom and cinnamon, 120mg caffeine, 6g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
 <meta name="twitter:image" content="https://www.kirkaday.com/assets/og-image.jpg">
 
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -54,9 +54,13 @@
        grids pass through a 3-column step on the way down, which strands the
        fourth card in a half-empty row. */
     [data-kd="four-up"], [data-kd="four-stats"] { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+    [data-kd="three-up"] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
     [data-kd="form-grid"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     @media (max-width: 1080px) {
       [data-kd="four-up"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    }
+    @media (max-width: 760px) {
+      [data-kd="three-up"] { grid-template-columns: minmax(0, 1fr) !important; }
     }
     @media (max-width: 700px) {
       [data-kd="four-stats"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
@@ -150,7 +154,7 @@
         </h1>
 
         <p data-rv="1" data-rv-delay="180" style="font-family:'EB Garamond',serif;font-size:clamp(18px,1.5vw,21.5px);line-height:1.6;color:#5A473B;margin:0 0 30px;max-width:32em;text-wrap:pretty;opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-          Sparkling hibiscus energy. The real flower steeped — not a flavor built to imitate it — with tamarind, cardamom, cinnamon and citrus. 120mg of caffeine, 6g of sugar, and an ingredient list we're happy to read out loud.
+          Sparkling hibiscus energy. The real flower steeped — not a flavor built to imitate it — with tamarind, cardamom and cinnamon. 120mg of caffeine, 6g of sugar, and an ingredient list we're happy to read out loud.
         </p>
 
         <div data-rv="1" data-rv-delay="250" style="display:flex;flex-wrap:wrap;gap:22px;margin-bottom:34px;opacity:0;transform:translateY(20px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
@@ -163,7 +167,7 @@
             <div style="font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-top:6px">Sugar per can</div>
           </div>
           <div style="border-left:1px solid rgba(190,154,66,0.6);padding-left:14px">
-            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1;color:#8E0B16">5</div>
+            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1;color:#8E0B16">4</div>
             <div style="font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-top:6px">Real botanicals</div>
           </div>
         </div>
@@ -214,7 +218,7 @@
           <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,4vw,54px);line-height:1.04;margin:0;color:#2B1A12;text-wrap:pretty">Energy you can read off the label.</h2>
         </div>
         <p data-rv="1" data-rv-delay="120" style="font-family:'EB Garamond',serif;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#5A473B;margin:0;max-width:34em;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-          A 12oz slim can with enough caffeine to matter and little enough sugar to drink daily. No taurine stack, no synthetic flavor, no crash engineered into the second half of the can — and the vitamin C comes from the flower.
+          A 12oz slim can with enough caffeine to matter and little enough sugar to drink daily. No taurine stack, no synthetic flavor — just the flower, doing the heavy lifting.
         </p>
       </div>
 
@@ -239,8 +243,6 @@
 
       <div data-rv="1" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease">
         <span style="border:1px solid rgba(190,154,66,0.6);padding:10px 18px;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#6E5A4C">Plant based</span>
-        <span style="border:1px solid rgba(190,154,66,0.6);padding:10px 18px;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#6E5A4C">Excellent source of vitamin C</span>
-        <span style="border:1px solid rgba(190,154,66,0.6);padding:10px 18px;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:#6E5A4C">Excellent source of fiber</span>
         <span style="border:1px dashed rgba(190,154,66,0.55);padding:10px 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#8F6E1E">Final nutrition panel pending</span>
       </div>
     </div>
@@ -301,7 +303,7 @@
       <div data-rv="1" style="max-width:34em;margin-bottom:52px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
         <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">The ingredient philosophy</div>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,4.2vw,58px);line-height:1.03;margin:0 0 22px;color:#2B1A12;text-wrap:pretty">Every ingredient should have a reason to be here.</h2>
-        <p style="font-family:'EB Garamond',serif;font-size:20px;line-height:1.58;color:#5A473B;margin:0">Not clean, not natural, not wellness — intentional. Five things in the drink, and each one is doing a job. Here's the job.</p>
+        <p style="font-family:'EB Garamond',serif;font-size:20px;line-height:1.58;color:#5A473B;margin:0">Not clean, not natural, not wellness — intentional. Four botanicals, each doing a job. Here's the job.</p>
       </div>
 
       <div data-rv="1" style="border:1px solid rgba(190,154,66,0.45);background:#FDFAF1;padding:clamp(22px,2.4vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:36px;align-items:center;margin-bottom:28px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
@@ -314,11 +316,11 @@
             <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E">Body &amp; tartness</span>
           </div>
           <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.56;color:#5A473B;margin:0 0 14px">The actual flower, steeped — not a flavor engineered to imitate one. It carries the colour, the tartness and the backbone of the whole drink.</p>
-          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#6E5A4C;margin:0;font-style:italic">Different calyces make dramatically different drinks, which makes sourcing half the recipe.</p>
+          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#6E5A4C;margin:0;font-style:italic">Different calyces make dramatically different drinks.</p>
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1px;background:rgba(190,154,66,0.45);border:1px solid rgba(190,154,66,0.45)" data-kd="four-up">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1px;background:rgba(190,154,66,0.45);border:1px solid rgba(190,154,66,0.45)" data-kd="three-up">
         <article data-rv="1" style="background:#FDFAF1;padding:28px 24px;opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)">
           <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin:0 0 10px;color:#8E0B16">Tamarind</h3>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-bottom:14px">Structure</div>
@@ -333,11 +335,6 @@
           <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin:0 0 10px;color:#8E0B16">Cinnamon</h3>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-bottom:14px">Aroma</div>
           <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">A whisper, not a dessert. The warm spine that keeps the tartness from reading thin.</p>
-        </article>
-        <article data-rv="1" data-rv-delay="270" style="background:#FDFAF1;padding:28px 24px;opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)">
-          <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin:0 0 10px;color:#8E0B16">Citrus</h3>
-          <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-bottom:14px">Lift</div>
-          <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Cuts the depth so the can finishes clean instead of heavy. Carbonation keeps it crisp and alive.</p>
         </article>
       </div>
 
@@ -386,7 +383,7 @@
             <li style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.5;color:#5A473B;padding-left:20px;border-left:1px solid rgba(190,154,66,0.65)">I didn't want an energy drink that tasted like an invented color.</li>
             <li style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.5;color:#5A473B;padding-left:20px;border-left:1px solid rgba(190,154,66,0.65)">And I didn't want a traditional drink buried under a mountain of sugar either.</li>
           </ul>
-          <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0 0 22px">I wanted something I could reach for and think: <em>I understand what I'm drinking.</em> So we started with real hibiscus, then tamarind, cardamom, cinnamon and citrus — and kept working. Batches too tart. Too sweet. Too heavy. Too weak. We learned that an ingredient can look brilliant on a nutrition label and still make something you don't want to drink every day.</p>
+          <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0 0 22px">I wanted something I could reach for and think: <em>I understand what I'm drinking.</em> So we started with real hibiscus, then tamarind, cardamom and cinnamon — and kept working. Batches too tart. Too sweet. Too heavy. Too weak. We learned that an ingredient can look brilliant on a nutrition label and still make something you don't want to drink every day.</p>
           <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0">KirkaDay isn't our attempt to bottle one culture's version of hibiscus. It's our contribution to a story people have been writing for generations.</p>
         </div>
 
@@ -420,7 +417,7 @@
         <img src="assets/logo-mark.webp" alt="" style="height:104px;width:auto;margin:0 auto 28px;display:block;animation:kd-drift 9s ease-in-out infinite" width="364" height="396">
         <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">Founding tasters · Spring 2027</div>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4vw,54px);line-height:1.04;margin:0 0 22px;color:#2B1A12;text-wrap:pretty">The first run goes to this list.</h2>
-        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.6;color:#5A473B;margin:0 auto 34px;max-width:32em">Five hundred cans out of the first Houston batch. Everyone here drinks before a shelf does — and gets the formulation notes as we lock them.</p>
+        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.6;color:#5A473B;margin:0 auto 34px;max-width:32em">Five hundred cans out of the first Houston batch. Everyone here drinks before a shelf does — and gets tasting notes from every batch as we lock the blend.</p>
       </div>
       <div data-rv="1" data-rv-delay="120" style="opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
         
