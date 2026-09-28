@@ -18,9 +18,10 @@ try {
 }
 
 // The can is framed on the logo and product name; the plate at the foot of
-// the arch sits over the on-pack callouts so the preview carries no numbers,
-// and a corner tag marks the can as a design preview.
-const CAN = { w: '800px', left: '-231px', top: '-178px' };
+// the arch sits over the on-pack callouts, and a corner tag marks the can as
+// a design preview. The sugar badge overlaps the wordmark's column, so it
+// can't be cropped out without cutting the name; it stays in frame.
+const CAN = { w: '1010px', left: '-326px', top: '-171px' };
 
 const PAGES = [
   { name: 'home', eyebrow: 'Launching Spring 2027',
