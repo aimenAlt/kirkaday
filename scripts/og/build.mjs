@@ -18,7 +18,8 @@ try {
 }
 
 // The can is framed on the logo and product name; the plate at the foot of
-// the arch sits over the on-pack callouts so the preview carries no numbers.
+// the arch sits over the on-pack callouts so the preview carries no numbers,
+// and a corner tag marks the can as a design preview.
 const CAN = { w: '800px', left: '-231px', top: '-178px' };
 
 const PAGES = [
