@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- 1200x630 social preview. build.mjs fills the text from the query string. -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=EB+Garamond:ital@0;1&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { background: #FCF7E9; color: #2B1A12; font-family: 'Jost', sans-serif; position: relative; }
+  .pattern { position: absolute; inset: 0; background: url("../../assets/tile-seamless.webp") 0 0 / 172px; opacity: 0.09; }
+  .band { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: #8E0B16; }
+  .copy { position: absolute; left: 84px; top: 0; bottom: 14px; width: 610px; display: flex; flex-direction: column; justify-content: center; }
+  .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 44px; }
+  .brand img.mark { height: 74px; }
+  .brand img.word { height: 34px; }
+  .eyebrow { font-size: 17px; letter-spacing: 0.3em; text-transform: uppercase; color: #8F6E1E; margin: 0 0 18px; }
+  h1 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 68px; line-height: 1.02; margin: 0 0 24px; color: #2B1A12; letter-spacing: -0.01em; }
+  .sub { font-family: 'EB Garamond', serif; font-size: 30px; line-height: 1.32; color: #5A473B; margin: 0; max-width: 20em; }
+  .sub b { font-weight: 400; color: #8E0B16; }
+  .rule { width: 64px; height: 2px; background: #BE9A42; margin: 34px 0 20px; }
+  .url { font-size: 18px; letter-spacing: 0.28em; text-transform: uppercase; color: #8F6E1E; }
+  .can { position: absolute; right: 84px; top: 42px; width: 360px; height: 574px; overflow: hidden;
+         border: 1px solid rgba(190,154,66,0.6); border-radius: 180px 180px 6px 6px; background: #EFE6DA;
+         box-shadow: 0 40px 70px -40px rgba(43,26,18,0.45); }
+  .can img { position: absolute; width: var(--w, 800px); left: var(--left, -231px); top: var(--top, -178px); }
+  .can .plate { position: absolute; left: 0; right: 0; bottom: 0; height: 86px; background: #8E0B16; color: #F6E3C4;
+                display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 15px;
+                letter-spacing: 0.3em; text-transform: uppercase; border-top: 1px solid rgba(227,183,94,0.7); }
+  .can .plate i { font-style: normal; color: #D9A94A; }
+</style>
+</head>
+<body>
+  <div class="pattern"></div>
+  <div class="copy">
+    <div class="brand">
+      <img class="mark" src="../../assets/logo-mark.webp" alt="">
+      <img class="word" src="../../assets/logo-wordmark.webp" alt="">
+    </div>
+    <p class="eyebrow" id="eyebrow"></p>
+    <h1 id="headline"></h1>
+    <p class="sub" id="sub"></p>
+    <div class="rule"></div>
+    <div class="url">kirka.day<span id="path"></span></div>
+  </div>
+  <div class="can"><img src="../../assets/can-beauty-900.webp" alt=""><div class="plate">Houston <i>✦</i> 2027</div></div>
+  <div class="band"></div>
+  <script>
+    var q = new URLSearchParams(location.search);
+    ['eyebrow', 'headline', 'sub', 'path'].forEach(function (k) {
+      document.getElementById(k).innerHTML = q.get(k) || '';
+    });
+    ['w', 'left', 'top'].forEach(function (k) {
+      if (q.get(k)) document.documentElement.style.setProperty('--' + k, q.get(k));
+    });
+  </script>
+</body>
+</html>

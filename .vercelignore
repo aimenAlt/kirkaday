@@ -1,0 +1,6 @@
+# Source material and tooling that must not be served from kirka.day.
+brand/
+scripts/
+README.md
+.idea/
+api/_test/

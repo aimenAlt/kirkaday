@@ -3,49 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KirkaDay | Sparkling Hibiscus Energy</title>
-<meta name="description" content="Sparkling hibiscus energy made with real hibiscus, tamarind, cardamom and cinnamon. 120 mg caffeine, 6 g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
-<link rel="canonical" href="https://www.kirkaday.com/">
+<title>KirkaDay | Sparkling Hibiscus Energy, Launching Spring 2027 in Houston</title>
+<meta name="description" content="KirkaDay is a sparkling hibiscus energy drink made with hibiscus, tamarind, cardamom and cinnamon. Launching Spring 2027 in Houston. Follow the build and get first dibs on tastings.">
+<link rel="canonical" href="https://kirka.day/">
 <meta name="theme-color" content="#FCF7E9">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KirkaDay">
 <meta property="og:title" content="KirkaDay | Sparkling Hibiscus Energy">
-<meta property="og:description" content="Sparkling hibiscus energy made with real hibiscus, tamarind, cardamom and cinnamon. 120 mg caffeine, 6 g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
-<meta property="og:url" content="https://www.kirkaday.com/">
-<meta property="og:image" content="https://www.kirkaday.com/assets/og-image.jpg">
+<meta property="og:description" content="Sparkling Hibiscus Energy. Launching Spring 2027 in Houston. Follow the build and get first dibs on tastings.">
+<meta property="og:url" content="https://kirka.day/">
+<meta property="og:image" content="https://kirka.day/assets/og/home.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KirkaDay can with the line Sparkling Hibiscus Energy, launching Spring 2027 in Houston">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KirkaDay | Sparkling Hibiscus Energy">
-<meta name="twitter:description" content="Sparkling hibiscus energy made with real hibiscus, tamarind, cardamom and cinnamon. 120 mg caffeine, 6 g sugar. Launching Spring 2027 from Houston. Join the founding taster list.">
-<meta name="twitter:image" content="https://www.kirkaday.com/assets/og-image.jpg">
+<meta name="twitter:description" content="Sparkling Hibiscus Energy. Launching Spring 2027 in Houston. Follow the build and get first dibs on tastings.">
+<meta name="twitter:image" content="https://kirka.day/assets/og/home.jpg">
 
-<link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="/assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" imagesrcset="assets/can-beauty-450.webp 450w, assets/can-beauty-900.webp 900w" imagesizes="(max-width: 900px) 100vw, 450px" type="image/webp">
+<link rel="preload" as="image" imagesrcset="/assets/can-beauty-450.webp 450w, /assets/can-beauty-900.webp 900w" imagesizes="(max-width: 900px) 100vw, 450px" type="image/webp">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 
 <style>
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: #FCF7E9; color: #2B1A12; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-    * { box-sizing: border-box; }
-    a { color: #8E0B16; text-decoration: none; }
-    a:hover { color: #B3121F; }
-    img { max-width: 100%; }
-    input, button, textarea { font: inherit; color: inherit; }
-    input:focus-visible, textarea:focus-visible, button:focus-visible, a:focus-visible { outline: 1px solid #BE9A42; outline-offset: 2px; }
-    ::selection { background: #8E0B16; color: #FCF7E9; }
-    ::placeholder { color: #9B8570; opacity: 1; }
-    @keyframes kd-marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @keyframes kd-drift { 0% { transform: translateY(0) } 50% { transform: translateY(-14px) } 100% { transform: translateY(0) } }
-
-    .kd-hidden { display: none !important; }
-
     .kd-shot { position: absolute; inset: 0; display: block; width: 100%; height: 100%;
                object-fit: cover; background: #F6EEDC; }
     .kd-shot-bordered { border: 1px solid rgba(190,154,66,0.45); }
@@ -53,55 +40,67 @@
     /* Four-item groups must read as 4 / 2x2 / 4-stacked. The reference's auto-fit
        grids pass through a 3-column step on the way down, which strands the
        fourth card in a half-empty row. */
-    [data-kd="four-up"], [data-kd="four-stats"] { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+    [data-kd="four-up"] { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
     [data-kd="three-up"] { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
-    [data-kd="form-grid"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     @media (max-width: 1080px) {
       [data-kd="four-up"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
     }
     @media (max-width: 760px) {
       [data-kd="three-up"] { grid-template-columns: minmax(0, 1fr) !important; }
     }
-    @media (max-width: 700px) {
-      [data-kd="four-stats"] { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-    }
     @media (max-width: 600px) {
-      [data-kd="four-up"], [data-kd="form-grid"] { grid-template-columns: minmax(0, 1fr) !important; }
+      [data-kd="four-up"] { grid-template-columns: minmax(0, 1fr) !important; }
     }
 
-    /* The reference design carries no breakpoints; the nav is the one row that
-       cannot reflow on its own, so it gets a phone layout: brand + CTA on the
-       first line, section links on a second full-width line. */
-    @media (max-width: 880px) {
-      [data-kd="nav-row"] { flex-wrap: wrap; padding: 10px 18px !important; gap: 10px 12px !important; }
-      [data-kd="nav-group"] { display: contents !important; }
-      [data-kd="nav-brand"] { gap: 10px !important; }
-      [data-kd="nav-brand"] img:first-child { height: 40px !important; }
-      [data-kd="nav-brand"] img:last-child { height: 17px !important; }
-      [data-kd="nav-cta"] { order: 2; padding: 10px 16px !important; font-size: 10px !important; letter-spacing: 0.16em !important; }
-      [data-kd="nav-links"] { order: 3; flex: 0 0 100%; width: 100%; justify-content: space-between; flex-wrap: nowrap !important;
-                              gap: 6px !important; font-size: 9.5px !important; letter-spacing: 0.12em !important;
-                              padding-top: 9px; border-top: 1px solid rgba(190,154,66,0.28); }
-    }
-    @media (max-width: 380px) {
-      [data-kd="nav-links"] { font-size: 8.5px !important; letter-spacing: 0.07em !important; }
+    /* Keep the sign-up above the fold on phones. */
+    @media (max-width: 600px) {
+      [data-kd="hero"] { padding: 30px 18px 36px !important; }
+      [data-kd="hero-grid"] { gap: 40px !important; }
+      [data-kd="hero-eyebrow"] { margin-bottom: 18px !important; }
+      [data-kd="hero-eyebrow"] img { height: 56px !important; }
+      [data-kd="hero-h1"] { margin-bottom: 16px !important; }
+      [data-kd="hero-lead"] { margin-bottom: 20px !important; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
       [data-marquee] { animation: none !important; }
       [style*="kd-drift"] { animation: none !important; }
     }
 
-    .kd-h1:hover{color:#8E0B16}
-    .kd-h2:hover{color:#8E0B16}
-    .kd-h3:hover{color:#8E0B16}
-    .kd-h4:hover{color:#8E0B16}
-    .kd-h5:hover{background:#B3121F;color:#FCF7E9}
-    .kd-h6:hover{background:#B3121F}
-    .kd-h7:hover{background:#B3121F}
-    .kd-h8:hover{background:#B3121F}
+    /* Follow the build */
+    .kd-follow { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; }
+    @media (max-width: 860px) { .kd-follow { grid-template-columns: minmax(0, 1fr); } }
+    .kd-video-frame { position: relative; aspect-ratio: 16 / 9; border: 1px solid rgba(190,154,66,0.55); background: #2B1A12; }
+    .kd-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .kd-video-card { position: relative; overflow: hidden; aspect-ratio: 16 / 9; display: flex; flex-direction: column;
+                     justify-content: center; align-items: flex-start; gap: 16px; padding: clamp(24px, 4vw, 48px);
+                     background: #8E0B16; color: #FCF7E9; border: 1px solid rgba(190,154,66,0.55); }
+    .kd-video-card::before { content: ""; position: absolute; inset: 0; background-image: url("/assets/tile-seamless.webp");
+                             background-size: 150px; opacity: 0.08; mix-blend-mode: screen; pointer-events: none; }
+    .kd-video-card > * { position: relative; }
+    .kd-video-label { font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #E3B75E; }
+    .kd-video-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: clamp(26px, 3.2vw, 42px);
+                      line-height: 1.08; margin: 0; color: #FCF7E9; text-wrap: pretty; }
+    .kd-video-title a { color: #F3DFC2; border-bottom: 1px solid rgba(227,183,94,0.7); }
+    .kd-video-title a:hover { color: #FCF7E9; }
+    @media (max-width: 420px) { .kd-video-card { aspect-ratio: auto; min-height: 220px; } }
+
+    .kd-stock { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.2em;
+                text-transform: uppercase; color: #8E0B16; border-bottom: 1px solid rgba(142,11,22,0.4); padding-bottom: 4px; }
+    .kd-stock:hover { color: #B3121F; border-color: #B3121F; }
+
+    /* FAQ */
+    .kd-faq { border-top: 1px solid rgba(190,154,66,0.5); }
+    .kd-faq details { border-bottom: 1px solid rgba(190,154,66,0.5); }
+    .kd-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 20px;
+                      padding: 22px 0; font-family: 'Playfair Display', serif; font-weight: 600; font-size: clamp(20px, 2vw, 25px); color: #2B1A12; }
+    .kd-faq summary::-webkit-details-marker { display: none; }
+    .kd-faq summary::after { content: "+"; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 26px; color: #8E0B16; line-height: 1; }
+    .kd-faq details[open] summary::after { content: "\2212"; }
+    .kd-faq summary:hover { color: #8E0B16; }
+    .kd-faq p { font-family: 'EB Garamond', serif; font-size: 19px; line-height: 1.6; color: #5A473B; margin: 0 0 24px; max-width: 36em; }
 </style>
+<noscript><style>[data-rv] { opacity: 1 !important; transform: none !important; }</style></noscript>
 
 <script type="application/ld+json">
 {
@@ -109,95 +108,90 @@
   "@type": "Organization",
   "name": "KirkaDay",
   "legalName": "Kirkaday LLC",
-  "url": "https://www.kirkaday.com/",
-  "logo": "https://www.kirkaday.com/assets/logo-mark.png",
-  "description": "Sparkling hibiscus energy brewed from the real flower. Launching Spring 2027.",
-  "email": "hello@kirkaday.com",
-  "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" }
+  "url": "https://kirka.day/",
+  "logo": "https://kirka.day/assets/logo-mark.png",
+  "description": "Sparkling hibiscus energy. Launching Spring 2027 in Houston.",
+  "email": "hello@kirka.day",
+  "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" },
+  "sameAs": [
+    "https://www.tiktok.com/@byaimenalt",
+    "https://www.instagram.com/byaimenalt/",
+    "https://www.youtube.com/@byAimenAlt"
+  ]
 }
 </script>
 </head>
 <body>
 <div style="font-family:'Jost',sans-serif;background:#FCF7E9;overflow:hidden">
 
-  <div data-pattern="1" style="position:fixed;inset:0;background-image:url(&quot;assets/tile-seamless.webp&quot;);background-size:172px;opacity:0.055;pointer-events:none;z-index:0"></div>
+  <div class="kd-pattern"></div>
 
-  <nav data-nav="1" style="position:sticky;top:0;z-index:60;background:rgba(252,247,233,0.93);backdrop-filter:blur(12px);border-bottom:1px solid rgba(190,154,66,0.32);transition:box-shadow .4s ease">
-    <div style="max-width:1280px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:28px" data-kd="nav-row">
-      <a href="#top" data-kd="nav-brand" style="display:flex;align-items:center;gap:13px;flex-shrink:0">
-        <img src="assets/logo-mark.webp" alt="" style="height:58px;width:auto;display:block" width="364" height="396">
+  <nav class="kd-nav" data-nav="1" aria-label="Main">
+    <div class="kd-nav-row">
+      <a href="/" class="kd-nav-brand" aria-label="KirkaDay home">
+        <img class="kd-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
         <picture>
-          <source srcset="assets/logo-wordmark.webp" type="image/webp">
-          <img src="assets/logo-wordmark.png" alt="KirkaDay" style="height:25px;width:auto;display:block" width="696" height="138">
+          <source srcset="/assets/logo-wordmark.webp" type="image/webp">
+          <img class="kd-word" src="/assets/logo-wordmark.png" alt="KirkaDay" width="696" height="138">
         </picture>
       </a>
-      <div style="display:flex;align-items:center;gap:28px" data-kd="nav-group">
-        <div data-kd="nav-links" style="display:flex;flex-wrap:wrap;gap:24px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#6E5A4C;white-space:nowrap">
-          <a href="#can" style="color:#6E5A4C" class="kd-h1">The Can</a>
-          <a href="#traditions" style="color:#6E5A4C" class="kd-h2">Traditions</a>
-          <a href="#ingredients" style="color:#6E5A4C" class="kd-h3">Ingredients</a>
-          <a href="#story" style="color:#6E5A4C" class="kd-h4">Story</a>
+      <div class="kd-nav-group">
+        <div class="kd-nav-links">
+          <a href="#can">The Can</a>
+          <a href="#story">Story</a>
+          <a href="#follow">Follow</a>
+          <a href="/wholesale">Wholesale</a>
         </div>
-        <a data-kd="nav-cta" href="#list" style="background:#8E0B16;color:#FCF7E9;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:12px 22px;border-radius:999px;white-space:nowrap;transition:background .3s ease" class="kd-h5">Join the list</a>
+        <a class="kd-nav-cta" href="#signup">Join the list</a>
       </div>
     </div>
   </nav>
 
-  <section id="top" style="position:relative;z-index:1;padding:72px 28px 44px">
-    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px;align-items:center">
+  <section id="top" data-kd="hero" style="position:relative;z-index:1;padding:64px 28px 44px">
+    <div data-kd="hero-grid" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px;align-items:center">
 
       <div>
-        <div data-rv="1" style="display:flex;align-items:center;gap:15px;margin-bottom:26px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-          <img src="assets/logo-mark.webp" alt="" style="height:78px;width:auto;display:block" width="364" height="396">
+        <div data-rv="1" data-kd="hero-eyebrow" style="display:flex;align-items:center;gap:15px;margin-bottom:26px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+          <img src="/assets/logo-mark.webp" alt="" style="height:78px;width:auto;display:block" width="364" height="396">
           <div style="width:1px;height:46px;background:rgba(190,154,66,0.5)"></div>
           <div style="font-size:10.5px;letter-spacing:0.28em;text-transform:uppercase;color:#8F6E1E;line-height:1.7">In development<br>Launching Spring 2027</div>
         </div>
 
-        <h1 data-rv="1" data-rv-delay="90" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(42px,5.4vw,78px);line-height:1;letter-spacing:-0.01em;margin:0 0 26px;color:#2B1A12;text-wrap:pretty;opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+        <h1 data-rv="1" data-rv-delay="90" data-kd="hero-h1" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(40px,5.4vw,78px);line-height:1;letter-spacing:-0.01em;margin:0 0 24px;color:#2B1A12;text-wrap:pretty;opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
           You've never had<br>hibiscus like this.
         </h1>
 
-        <p data-rv="1" data-rv-delay="180" style="font-family:'EB Garamond',serif;font-size:clamp(18px,1.5vw,21.5px);line-height:1.6;color:#5A473B;margin:0 0 30px;max-width:32em;text-wrap:pretty;opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-          Sparkling hibiscus energy, made with real hibiscus, tamarind, cardamom and cinnamon. 120 mg of caffeine. 6 g of sugar. And a label you can actually read.
+        <p data-rv="1" data-rv-delay="180" data-kd="hero-lead" style="font-family:'EB Garamond',serif;font-size:clamp(19px,1.7vw,24px);line-height:1.5;color:#5A473B;margin:0 0 30px;max-width:32em;text-wrap:pretty;opacity:0;transform:translateY(22px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <strong style="font-weight:500;color:#8E0B16">Sparkling Hibiscus Energy.</strong> Launching Spring 2027 in Houston.
         </p>
 
-        <div data-rv="1" data-rv-delay="250" style="display:flex;flex-wrap:wrap;gap:22px;margin-bottom:34px;opacity:0;transform:translateY(20px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-          <div style="border-left:1px solid rgba(190,154,66,0.6);padding-left:14px">
-            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1;color:#8E0B16">120<span style="font-size:14px;font-weight:500"> mg</span></div>
-            <div style="font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-top:6px">Caffeine</div>
-          </div>
-          <div style="border-left:1px solid rgba(190,154,66,0.6);padding-left:14px">
-            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1;color:#8E0B16">6<span style="font-size:14px;font-weight:500"> g</span></div>
-            <div style="font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-top:6px">Sugar per can</div>
-          </div>
-          <div style="border-left:1px solid rgba(190,154,66,0.6);padding-left:14px">
-            <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;line-height:1;color:#8E0B16">Real</div>
-            <div style="font-size:9.5px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-top:6px">Hibiscus</div>
-          </div>
-        </div>
-
-        <div data-rv="1" data-rv-delay="310" style="opacity:0;transform:translateY(20px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-          
-            <div data-kd-group="hero" data-kd-role="done" class="kd-hidden" style="display:flex;align-items:center;gap:14px;padding:20px 24px;border:1px solid rgba(190,154,66,0.55);background:rgba(190,154,66,0.09);max-width:520px">
-              <img src="assets/logo-mark.webp" alt="" style="height:54px;width:auto" width="364" height="396">
-              <div>
-                <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:19px;color:#8E0B16">You're on the list.</div>
-                <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6E5A4C;margin-top:5px">We'll write when the first run is poured.</div>
-              </div>
+        <div id="signup" data-rv="1" data-rv-delay="250" style="scroll-margin-top:140px;opacity:0;transform:translateY(20px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+          <form class="kd-signup" method="POST" action="/api/subscribe" data-signup>
+            <p class="kd-alert" role="alert" data-signup-error hidden>That didn't go through, so you're not on the list yet. Please try again, or email <a href="mailto:hello@kirka.day">hello@kirka.day</a>.</p>
+            <div class="kd-signup-row">
+              <label class="kd-sr" for="hero-email">Email address</label>
+              <input class="kd-input" id="hero-email" type="email" name="email" required autocomplete="email" maxlength="254" placeholder="you@email.com">
+              <label class="kd-sr" for="hero-zip">ZIP code (optional)</label>
+              <input class="kd-input kd-input-zip" id="hero-zip" type="text" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="ZIP (optional)">
+              <button class="kd-btn" type="submit">I'm in</button>
             </div>
-          
-            <form data-kd-group="hero" data-kd-role="form" style="display:flex;flex-wrap:wrap;gap:10px;max-width:540px">
-              <input type="email" required="required" placeholder="you@email.com" style="flex:1 1 220px;min-width:0;background:rgba(253,250,241,0.8);border:1px solid rgba(43,26,18,0.25);padding:15px 20px;font-size:14px;letter-spacing:0.03em;color:#2B1A12">
-              <button type="submit" style="flex:0 0 auto;background:#8E0B16;color:#FCF7E9;border:none;padding:15px 28px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .3s ease" class="kd-h6">Claim a founding can</button>
-            </form>
-          <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">A limited first run · The list drinks first</div>
+            <input type="hidden" name="source" value="home">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_term" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="referring_site" value="">
+            <div class="kd-hp" aria-hidden="true"><label for="hero-company">Company</label><input id="hero-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+          </form>
+          <p class="kd-fine">A 2-minute email every Sunday · Unsubscribe anytime · <a href="/privacy">Privacy</a></p>
         </div>
       </div>
 
       <div data-rv="1" data-rv-delay="140" style="display:flex;justify-content:center;opacity:0;transform:translateY(30px);transition:opacity 1.1s cubic-bezier(.16,1,.3,1),transform 1.1s cubic-bezier(.16,1,.3,1)">
         <div data-parallax="0.05" style="position:relative;width:100%;max-width:450px">
           <div data-hero-frame="1" style="position:relative;overflow:hidden;border:1px solid rgba(190,154,66,0.55);border-radius:225px 225px 6px 6px;box-shadow:0 40px 80px -40px rgba(43,26,18,0.35)">
-            <picture><source type="image/webp" srcset="assets/can-beauty-450.webp 450w, assets/can-beauty-900.webp 900w" sizes="(max-width: 900px) 100vw, 450px"><img src="assets/can-beauty-900.jpg" alt="KirkaDay Sparkling Hibiscus Energy can" width="1024" height="1536" fetchpriority="high" style="display:block;width:100%;height:auto"></picture>
+            <picture><source type="image/webp" srcset="/assets/can-beauty-450.webp 450w, /assets/can-beauty-900.webp 900w" sizes="(max-width: 900px) 100vw, 450px"><img src="/assets/can-beauty-900.jpg" alt="KirkaDay Sparkling Hibiscus Energy can" width="1024" height="1536" fetchpriority="high" style="display:block;width:100%;height:auto"></picture>
           </div>
           <div style="position:absolute;left:-14px;bottom:26px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E">12 fl oz · 355 mL</div>
         </div>
@@ -208,8 +202,8 @@
   <section style="margin-top:52px;background:#8E0B16;overflow:hidden;padding:19px 0;position:relative;z-index:1">
     <div data-marquee="1" style="display:flex;width:max-content;animation:kd-marq 42s linear infinite">
       <div style="display:flex">
-        <span style="display:flex;align-items:center;gap:30px;padding:0 30px;font-size:12.5px;letter-spacing:0.32em;text-transform:uppercase;color:#F6E3C4;white-space:nowrap">Real hibiscus<span style="color:#D9A94A">✦</span>Tamarind<span style="color:#D9A94A">✦</span>Cardamom<span style="color:#D9A94A">✦</span>Cinnamon<span style="color:#D9A94A">✦</span>Brighter days<span style="color:#D9A94A">✦</span>One flower, many tables<span style="color:#D9A94A">✦</span></span>
-        <span style="display:flex;align-items:center;gap:30px;padding:0 30px;font-size:12.5px;letter-spacing:0.32em;text-transform:uppercase;color:#F6E3C4;white-space:nowrap">Real hibiscus<span style="color:#D9A94A">✦</span>Tamarind<span style="color:#D9A94A">✦</span>Cardamom<span style="color:#D9A94A">✦</span>Cinnamon<span style="color:#D9A94A">✦</span>Brighter days<span style="color:#D9A94A">✦</span>One flower, many tables<span style="color:#D9A94A">✦</span></span>
+        <span style="display:flex;align-items:center;gap:30px;padding:0 30px;font-size:12.5px;letter-spacing:0.32em;text-transform:uppercase;color:#F6E3C4;white-space:nowrap">Real hibiscus<span style="color:#D9A94A">✦</span>Tamarind<span style="color:#D9A94A">✦</span>Cardamom<span style="color:#D9A94A">✦</span>Cinnamon<span style="color:#D9A94A">✦</span>Houston · Spring 2027<span style="color:#D9A94A">✦</span>One flower, many tables<span style="color:#D9A94A">✦</span></span>
+        <span aria-hidden="true" style="display:flex;align-items:center;gap:30px;padding:0 30px;font-size:12.5px;letter-spacing:0.32em;text-transform:uppercase;color:#F6E3C4;white-space:nowrap">Real hibiscus<span style="color:#D9A94A">✦</span>Tamarind<span style="color:#D9A94A">✦</span>Cardamom<span style="color:#D9A94A">✦</span>Cinnamon<span style="color:#D9A94A">✦</span>Houston · Spring 2027<span style="color:#D9A94A">✦</span>One flower, many tables<span style="color:#D9A94A">✦</span></span>
       </div>
     </div>
   </section>
@@ -222,34 +216,34 @@
           <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,4vw,54px);line-height:1.04;margin:0;color:#2B1A12;text-wrap:pretty">Energy you can read off the label.</h2>
         </div>
         <p data-rv="1" data-rv-delay="120" style="font-family:'EB Garamond',serif;font-size:clamp(17px,1.4vw,20px);line-height:1.6;color:#5A473B;margin:0;max-width:34em;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-          A 12 fl oz (355 mL) slim can with real caffeine, real hibiscus and 6 g of sugar. No taurine stack, no vitamin megadose — just ingredients you'd recognize.
+          A 12 fl oz (355 mL) slim can of sparkling hibiscus energy, built around real hibiscus with tamarind, cardamom and cinnamon. Ingredients you'd recognize, printed plainly on the can.
         </p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,150px),1fr));gap:1px;background:rgba(190,154,66,0.5);border:1px solid rgba(190,154,66,0.5)" data-kd="three-up">
         <div data-rv="1" style="background:#FDFAF1;padding:34px 26px;opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease">
-          <div data-count="120" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">120</div>
-          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">mg caffeine</div>
+          <div data-count="12" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">12</div>
+          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">fl oz · 355 mL slim can</div>
         </div>
         <div data-rv="1" data-rv-delay="90" style="background:#FDFAF1;padding:34px 26px;opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease">
-          <div data-count="6" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">6</div>
-          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">g sugar per can</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">2027</div>
+          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">Launching this spring</div>
         </div>
         <div data-rv="1" data-rv-delay="180" style="background:#FDFAF1;padding:34px 26px;opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease">
-          <div data-count="12" style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">12</div>
-          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">fl oz · 355 mL</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(44px,5.2vw,70px);line-height:1;color:#8E0B16">Houston</div>
+          <div style="font-size:10.5px;letter-spacing:0.24em;text-transform:uppercase;color:#8F6E1E;margin-top:14px">First city on the map</div>
         </div>
       </div>
 
       <div data-rv="1" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease">
         <span style="border:1px dashed rgba(190,154,66,0.55);padding:10px 18px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#8F6E1E">Final nutrition panel pending</span>
-        <span style="flex:1 1 320px;padding:10px 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;line-height:1.6;letter-spacing:0.08em;color:#8F6E1E">Contains 120 mg caffeine per can. Not recommended for children, people who are pregnant or nursing, or anyone sensitive to caffeine.</span>
+        <span style="flex:1 1 320px;padding:10px 0;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:10.5px;line-height:1.6;letter-spacing:0.08em;color:#8F6E1E">The formula is still being tuned. Full nutrition facts will be printed on every can before launch.</span>
       </div>
     </div>
   </section>
 
   <section id="traditions" style="background:#8E0B16;color:#FCF7E9;padding:104px 28px;position:relative;z-index:1;overflow:hidden">
-    <div data-pattern="1" style="position:absolute;inset:0;background-image:url(&quot;assets/tile-seamless.webp&quot;);background-size:150px;opacity:0.08;mix-blend-mode:screen;pointer-events:none"></div>
+    <div data-pattern="1" style="position:absolute;inset:0;background-image:url(&quot;/assets/tile-seamless.webp&quot;);background-size:150px;opacity:0.08;mix-blend-mode:screen;pointer-events:none"></div>
     <div style="max-width:1180px;margin:0 auto;position:relative">
 
       <div data-rv="1" style="text-align:center;max-width:36em;margin:0 auto 60px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
@@ -269,7 +263,7 @@
           <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1.1;color:#FCF7E9;margin-bottom:6px">Bissap</div>
           <div style="font-family:'EB Garamond',serif;font-size:22px;color:#E3B75E;margin-bottom:16px">Wolof</div>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#E3B75E;padding-bottom:14px;border-bottom:1px solid rgba(227,183,94,0.4);margin-bottom:14px">Senegal · West Africa</div>
-          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#F3DFC2;margin:0">Often lifted with mint or ginger and sold ice-cold on the street.</p>
+          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#F3DFC2;margin:0">Poured deep red and sold ice-cold on street corners across West Africa.</p>
         </article>
         <article data-rv="1" data-rv-delay="180" style="background:#8E0B16;padding:32px 26px;opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)">
           <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1.1;color:#FCF7E9;margin-bottom:6px">Jamaica</div>
@@ -281,7 +275,7 @@
           <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1.1;color:#FCF7E9;margin-bottom:6px">Sorrel</div>
           <div style="font-family:'EB Garamond',serif;font-size:22px;color:#E3B75E;margin-bottom:16px">Caribbean</div>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#E3B75E;padding-bottom:14px;border-bottom:1px solid rgba(227,183,94,0.4);margin-bottom:14px">Jamaica · Trinidad · Guyana</div>
-          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#F3DFC2;margin:0">Spiced with clove and ginger and carried across the Atlantic — in much of the Caribbean, it tastes like Christmas.</p>
+          <p style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.5;color:#F3DFC2;margin:0">Spiced, steeped and carried across the Atlantic — in much of the Caribbean, it tastes like Christmas.</p>
         </article>
       </div>
 
@@ -308,7 +302,7 @@
 
       <div data-rv="1" style="border:1px solid rgba(190,154,66,0.45);background:#FDFAF1;padding:clamp(22px,2.4vw,30px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:36px;align-items:center;margin-bottom:28px;opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
         <div style="position:relative;width:100%;height:clamp(250px,26vw,320px)">
-          <picture><source type="image/webp" srcset="assets/hibiscus-calyces-700.webp 700w, assets/hibiscus-calyces-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 540px"><img src="assets/hibiscus-calyces-1200.jpg" alt="Dried hibiscus calyces scattered across a sunlit windowsill" width="1200" height="655" loading="lazy" decoding="async" class="kd-shot kd-shot-bordered"></picture>
+          <picture><source type="image/webp" srcset="/assets/hibiscus-calyces-700.webp 700w, /assets/hibiscus-calyces-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 540px"><img src="/assets/hibiscus-calyces-1200.jpg" alt="Dried hibiscus calyces scattered across a sunlit windowsill" width="1200" height="655" loading="lazy" decoding="async" class="kd-shot kd-shot-bordered"></picture>
         </div>
         <div>
           <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(190,154,66,0.35);padding-bottom:14px;margin-bottom:16px">
@@ -328,30 +322,13 @@
         <article data-rv="1" data-rv-delay="90" style="background:#FDFAF1;padding:28px 24px;opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)">
           <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin:0 0 10px;color:#8E0B16">Cardamom</h3>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-bottom:14px">The spice of welcome</div>
-          <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Cracked into coffee for guests across the Arabian Peninsula and simmered into chai across South Asia.</p>
+          <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Cracked open for guests across the Arabian Peninsula and simmered into chai across South Asia.</p>
         </article>
         <article data-rv="1" data-rv-delay="180" style="background:#FDFAF1;padding:28px 24px;opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)">
           <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;margin:0 0 10px;color:#8E0B16">Cinnamon</h3>
           <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E;margin-bottom:14px">Warmth from bark</div>
           <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Stirred into café de olla and horchata in Mexico, and dusted over sahlab across the Middle East.</p>
         </article>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px;margin-top:28px">
-        <div data-rv="1" style="border:1px solid rgba(190,154,66,0.45);padding:26px;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease">
-          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
-            <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;color:#8E0B16">Sweetness</span>
-            <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E">6g</span>
-          </div>
-          <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Cane sugar. Sweet enough to enjoy, nowhere near liquid candy.</p>
-        </div>
-        <div data-rv="1" data-rv-delay="100" style="border:1px solid rgba(190,154,66,0.45);padding:26px;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease">
-          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:12px">
-            <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:23px;color:#8E0B16">Caffeine</span>
-            <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8F6E1E">120mg</span>
-          </div>
-          <p style="font-family:'EB Garamond',serif;font-size:17px;line-height:1.5;color:#5A473B;margin:0">Enough to move the day forward. Not enough to hijack it.</p>
-        </div>
       </div>
 
       <p data-rv="1" style="font-family:'EB Garamond',serif;font-size:20px;line-height:1.58;color:#5A473B;margin:28px 0 0;max-width:34em;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease">In the glass: tart and floral up front, warm and spiced on the finish, lightly sparkling throughout.</p>
@@ -381,7 +358,7 @@
           <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0 0 22px">I love the craft of food — where an ingredient comes from, and why people have reached for it for generations. That's what felt missing when I looked at the modern beverage aisle.</p>
           <ul style="list-style:none;margin:0 0 26px;padding:20px 0 0;display:grid;gap:15px;border-top:1px solid rgba(190,154,66,0.5)">
             <li style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.5;color:#5A473B;padding-left:20px;border-left:1px solid rgba(190,154,66,0.65)">I didn't want an energy drink that tasted like an invented color.</li>
-            <li style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.5;color:#5A473B;padding-left:20px;border-left:1px solid rgba(190,154,66,0.65)">And I didn't want a traditional drink buried under a mountain of sugar either.</li>
+            <li style="font-family:'EB Garamond',serif;font-size:18px;line-height:1.5;color:#5A473B;padding-left:20px;border-left:1px solid rgba(190,154,66,0.65)">And I didn't want to bury a traditional drink under a mountain of sweetness either.</li>
           </ul>
           <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0 0 22px">I wanted something I could reach for and think: <em>I understand what I'm drinking.</em> So we started with real hibiscus, then tamarind, cardamom and cinnamon — and kept working. Batches too tart. Too sweet. Too heavy. Too weak.</p>
           <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.62;color:#5A473B;margin:0">KirkaDay<sup style="font-size:0.55em">™</sup> is a modern sparkling energy drink, made with respect for a flower people have loved for generations.</p>
@@ -391,17 +368,17 @@
           <div style="position:sticky;top:118px">
             <div style="position:relative;width:100%;height:clamp(340px,38vw,470px);border:1px solid rgba(190,154,66,0.5);padding:10px;background:#FDFAF1">
               <div style="position:relative;width:100%;height:100%">
-                <picture><source type="image/webp" srcset="assets/pitcher-sunset-600.webp 600w, assets/pitcher-sunset-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 560px"><img src="assets/pitcher-sunset-1100.jpg" alt="A glass pitcher of deep red hibiscus tea and two glasses on a wooden table in late afternoon light" width="1100" height="956" loading="lazy" decoding="async" class="kd-shot"></picture>
+                <picture><source type="image/webp" srcset="/assets/pitcher-sunset-600.webp 600w, /assets/pitcher-sunset-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 560px"><img src="/assets/pitcher-sunset-1100.jpg" alt="A glass pitcher of deep red hibiscus tea and two glasses on a wooden table in late afternoon light" width="1100" height="956" loading="lazy" decoding="async" class="kd-shot"></picture>
               </div>
             </div>
             <div style="margin-top:26px;border:1px solid rgba(190,154,66,0.5);background:#FDFAF1;padding:28px">
               <div style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.7;color:#5A473B;margin:0 0 20px">One flower, poured for generations<br>at tables around the world.</div>
-              <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(22px,2.2vw,28px);line-height:1.2;color:#8E0B16">KirkaDay puts it to work for your day.</div>
+              <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(22px,2.2vw,28px);line-height:1.2;color:#8E0B16">Now it comes sparkling, in a slim can.</div>
             </div>
             <div style="display:flex;align-items:center;gap:15px;margin-top:26px;padding-top:24px;border-top:1px solid rgba(190,154,66,0.5)">
               <picture>
-                <source srcset="assets/logo-monogram.webp" type="image/webp">
-                <img src="assets/logo-monogram.png" alt="" style="height:44px;width:auto" width="286" height="358">
+                <source srcset="/assets/logo-monogram.webp" type="image/webp">
+                <img src="/assets/logo-monogram.png" alt="" style="height:44px;width:auto" width="286" height="358">
               </picture>
               <div>
                 <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:20px;color:#2B1A12">Aimen</div>
@@ -414,84 +391,115 @@
     </div>
   </section>
 
-  <section id="list" style="position:relative;z-index:1;padding:100px 28px">
-    <div style="max-width:760px;margin:0 auto;text-align:center">
+  <section id="follow" style="padding:100px 28px;position:relative;z-index:1">
+    <div class="kd-follow" style="max-width:1180px;margin:0 auto">
       <div data-rv="1" style="opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-        <img src="assets/logo-mark.webp" alt="" style="height:104px;width:auto;margin:0 auto 28px;display:block;animation:kd-drift 9s ease-in-out infinite" width="364" height="396">
-        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">Founding tasters · Spring 2027</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4vw,54px);line-height:1.04;margin:0 0 22px;color:#2B1A12;text-wrap:pretty">The first run goes to this list.</h2>
-        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.6;color:#5A473B;margin:0 auto 34px;max-width:32em">A limited first run. Everyone here tastes KirkaDay before a shelf does — and hears first when the blend locks and the cans are filling.</p>
-      </div>
-      <div data-rv="1" data-rv-delay="120" style="opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-        
-          <div data-kd-group="list" data-kd-role="done" class="kd-hidden" style="border:1px solid rgba(142,11,22,0.4);background:#FDFAF1;padding:26px;max-width:560px;margin:0 auto">
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:22px;color:#8E0B16;margin-bottom:7px">Saved you a can.</div>
-            <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6E5A4C">Check your inbox for the confirmation.</div>
-          </div>
-        
-          <form data-kd-group="list" data-kd-role="form" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:560px;margin:0 auto">
-            <input type="email" required="required" placeholder="you@email.com" style="flex:1 1 240px;min-width:0;background:#FDFAF1;border:1px solid rgba(43,26,18,0.25);padding:16px 20px;font-size:14px;letter-spacing:0.03em;color:#2B1A12">
-            <button type="submit" style="flex:0 0 auto;background:#8E0B16;color:#FCF7E9;border:none;padding:16px 30px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .3s ease" class="kd-h7">Join the list</button>
-          </form>
-      </div>
-    </div>
-  </section>
-
-  <section id="buyers" style="padding:20px 28px 100px;position:relative;z-index:1">
-    <div style="max-width:1180px;margin:0 auto;border:1px solid rgba(190,154,66,0.5);background:#FDFAF1;padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px">
-      <div data-rv="1" style="opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">For buyers</div>
-        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(30px,3.2vw,44px);line-height:1.06;margin:0 0 20px;color:#2B1A12;text-wrap:pretty">Stocking KirkaDay.</h2>
-        <p style="font-family:'EB Garamond',serif;font-size:18.5px;line-height:1.6;color:#5A473B;margin:0 0 26px;max-width:30em">12oz slim can, 12-pack cases, retail-ready for Spring 2027. Hibiscus is a flavor plenty of shoppers already know. Tell us where you'd put it and we'll send specs, margins, and the buyer deck.</p>
-        <ul style="list-style:none;margin:0;padding:0;display:grid;gap:12px">
-          <li style="display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#6E5A4C"><span style="width:5px;height:5px;background:#8E0B16;flex:0 0 auto"></span>Grocery · Convenience · Specialty</li>
-          <li style="display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#6E5A4C"><span style="width:5px;height:5px;background:#8E0B16;flex:0 0 auto"></span>Foodservice · College &amp; workplace campuses</li>
-          <li style="display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#6E5A4C"><span style="width:5px;height:5px;background:#8E0B16;flex:0 0 auto"></span>Texas first, then national</li>
+        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">Building in public</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,3.8vw,52px);line-height:1.04;margin:0 0 22px;color:#2B1A12;text-wrap:pretty">Follow the build.</h2>
+        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.6;color:#5A473B;margin:0 0 30px;max-width:30em">Every batch, every can proof, every wrong turn on the way to Spring 2027 — posted as it happens.</p>
+        <ul class="kd-social">
+          <li><a href="https://www.tiktok.com/@byaimenalt" rel="noopener" target="_blank"><span class="kd-social-name">TikTok</span><span class="kd-social-handle">@byaimenalt ↗</span></a></li>
+          <li><a href="https://www.instagram.com/byaimenalt/" rel="noopener" target="_blank"><span class="kd-social-name">Instagram</span><span class="kd-social-handle">@byaimenalt ↗</span></a></li>
+          <li><a href="https://www.youtube.com/@byAimenAlt" rel="noopener" target="_blank"><span class="kd-social-name">YouTube</span><span class="kd-social-handle">@byAimenAlt ↗</span></a></li>
         </ul>
       </div>
 
       <div data-rv="1" data-rv-delay="120" style="opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
-        
-          <div data-kd-group="buyer" data-kd-role="done" class="kd-hidden" style="border:1px solid rgba(190,154,66,0.55);background:rgba(190,154,66,0.1);padding:28px">
-            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:22px;color:#8E0B16;margin-bottom:8px">Request received.</div>
-            <div style="font-family:'EB Garamond',serif;font-size:17.5px;line-height:1.55;color:#5A473B">The deck and spec sheet are on their way. We answer buyer mail within two business days.</div>
+        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">Latest video</div>
+        <div id="latest-video">
+          <div class="kd-video-card">
+            <div class="kd-video-label">On YouTube</div>
+            <p class="kd-video-title">Day 1 drops soon, <a href="https://www.youtube.com/@byAimenAlt" rel="noopener" target="_blank">follow on YouTube</a>.</p>
           </div>
-        
-          <form data-kd-group="buyer" data-kd-role="form" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:12px" data-kd="form-grid">
-            <input required="required" placeholder="Your name" style="min-width:0;background:transparent;border:1px solid rgba(43,26,18,0.22);padding:14px 16px;font-size:14px">
-            <input required="required" placeholder="Company" style="min-width:0;background:transparent;border:1px solid rgba(43,26,18,0.22);padding:14px 16px;font-size:14px">
-            <input type="email" required="required" placeholder="Work email" style="min-width:0;background:transparent;border:1px solid rgba(43,26,18,0.22);padding:14px 16px;font-size:14px">
-            <input required="required" placeholder="City / market" style="min-width:0;background:transparent;border:1px solid rgba(43,26,18,0.22);padding:14px 16px;font-size:14px">
-            <textarea rows="3" placeholder="Doors, volume, timing — anything useful" style="grid-column:1/-1;min-width:0;background:transparent;border:1px solid rgba(43,26,18,0.22);padding:14px 16px;font-size:14px;resize:vertical;font-family:'Jost',sans-serif"></textarea>
-            <button type="submit" style="grid-column:1/-1;background:#8E0B16;color:#FCF7E9;border:none;padding:16px 28px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;white-space:nowrap;cursor:pointer;transition:background .3s ease" class="kd-h8">Request the buyer deck</button>
-          </form>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer style="background:#2B1A12;color:#F3DFC2;padding:64px 28px 34px;position:relative;z-index:1">
-    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:40px;align-items:start">
-      <div>
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
-          <img src="assets/logo-mark.webp" alt="" style="height:64px;width:auto;display:block" width="364" height="396">
-          <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;letter-spacing:0.01em;color:#F3DFC2">KirkaDay<sup style="font-size:0.55em">™</sup></span>
-        </div>
-        <div style="font-size:10.5px;letter-spacing:0.26em;text-transform:uppercase;color:#C2A78C;line-height:2">Sparkling hibiscus energy<br>One flower. Many cultures. One new chapter.</div>
+  <section id="list" style="position:relative;z-index:1;padding:100px 28px;background:#F4EAD3">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <div data-rv="1" style="opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+        <img src="/assets/logo-mark.webp" alt="" style="height:104px;width:auto;margin:0 auto 28px;display:block;animation:kd-drift 9s ease-in-out infinite" width="364" height="396">
+        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">The Sunday email · Spring 2027</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4vw,54px);line-height:1.04;margin:0 0 22px;color:#2B1A12;text-wrap:pretty">Get first dibs on Houston tastings.</h2>
+        <p style="font-family:'EB Garamond',serif;font-size:19px;line-height:1.6;color:#5A473B;margin:0 auto 34px;max-width:32em">A 2-minute email every Sunday: what worked, what broke, and first word when tastings open in Houston.</p>
       </div>
-      <div style="display:grid;gap:12px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase">
-        <a href="#can" style="color:#F3DFC2">The can</a>
-        <a href="#traditions" style="color:#F3DFC2">Traditions</a>
-        <a href="#ingredients" style="color:#F3DFC2">Ingredients</a>
-        <a href="#story" style="color:#F3DFC2">Story</a>
-        <a href="#buyers" style="color:#F3DFC2">Buyers</a>
-      </div>
-      <div style="display:grid;gap:12px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#C2A78C">
-        <div>Houston, Texas</div>
-        <a href="mailto:hello@kirkaday.com" style="color:#F3DFC2">hello@kirkaday.com</a>
-        <a href="#list" style="color:#F3DFC2">Join the list</a>
+      <div data-rv="1" data-rv-delay="120" style="opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+        <form class="kd-signup" method="POST" action="/api/subscribe" data-signup style="margin:0 auto;text-align:left">
+          <p class="kd-alert" role="alert" data-signup-error hidden>That didn't go through, so you're not on the list yet. Please try again, or email <a href="mailto:hello@kirka.day">hello@kirka.day</a>.</p>
+          <div class="kd-signup-row" style="justify-content:center">
+            <label class="kd-sr" for="list-email">Email address</label>
+            <input class="kd-input" id="list-email" type="email" name="email" required autocomplete="email" maxlength="254" placeholder="you@email.com" style="background:#FDFAF1">
+            <label class="kd-sr" for="list-zip">ZIP code (optional)</label>
+            <input class="kd-input kd-input-zip" id="list-zip" type="text" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" placeholder="ZIP (optional)" style="background:#FDFAF1">
+            <button class="kd-btn" type="submit">I'm in</button>
+          </div>
+          <input type="hidden" name="source" value="home">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="utm_term" value="">
+          <input type="hidden" name="utm_content" value="">
+          <input type="hidden" name="referring_site" value="">
+          <div class="kd-hp" aria-hidden="true"><label for="list-company">Company</label><input id="list-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+        </form>
+        <p class="kd-fine">Unsubscribe anytime · <a href="/privacy">Privacy</a></p>
+        <p style="margin:40px 0 0"><a class="kd-stock" href="/wholesale">Own a store or distribute drinks? →</a></p>
       </div>
     </div>
-    <div style="max-width:1180px;margin:44px auto 0;padding-top:22px;border-top:1px solid rgba(243,223,194,0.18);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:#9B8570">
+  </section>
+
+  <section id="faq" style="padding:100px 28px;position:relative;z-index:1">
+    <div style="max-width:900px;margin:0 auto">
+      <div data-rv="1" style="margin-bottom:36px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+        <div style="font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:#8F6E1E;margin-bottom:18px">Questions</div>
+        <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,3.8vw,52px);line-height:1.04;margin:0;color:#2B1A12">The short answers.</h2>
+      </div>
+      <div class="kd-faq" data-rv="1" data-rv-delay="100" style="opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+        <details>
+          <summary>What is KirkaDay?</summary>
+          <p>A sparkling hibiscus energy drink, built around real hibiscus with tamarind, cardamom and cinnamon. The final blend is still being tuned.</p>
+        </details>
+        <details>
+          <summary>When does it launch?</summary>
+          <p>Spring 2027. The Sunday email hears first when the blend locks and the first cans are filling.</p>
+        </details>
+        <details>
+          <summary>Where can I get it?</summary>
+          <p>Houston first. Join the list with your ZIP and you'll hear where the first cans land and when tastings open.</p>
+        </details>
+        <details>
+          <summary>I run a store. Can I carry it?</summary>
+          <p>Yes, please. Join the <a href="/wholesale">wholesale interest list</a> to get samples first and founding-partner terms.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer class="kd-footer">
+    <div class="kd-footer-grid">
+      <div>
+        <div class="kd-footer-brand">
+          <img src="/assets/logo-mark.webp" alt="" width="364" height="396">
+          <span>KirkaDay<sup>™</sup></span>
+        </div>
+        <div class="kd-footer-tag">Sparkling hibiscus energy<br>One flower. Many cultures. One new chapter.</div>
+      </div>
+      <nav class="kd-footer-col" aria-label="Footer">
+        <a href="/join">Follow the build</a>
+        <a href="/wholesale">Wholesale</a>
+        <a href="/log">Past emails</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+      <div class="kd-footer-col">
+        <div>Houston, Texas</div>
+        <a href="mailto:hello@kirka.day">hello@kirka.day</a>
+        <a href="https://www.tiktok.com/@byaimenalt" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/byaimenalt/" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@byAimenAlt" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div class="kd-footer-base">
       <span>© 2026 Kirkaday LLC</span>
       <span>KirkaDay™ is a trademark of Kirkaday LLC.</span>
       <span>Pre-launch · Spring 2027</span>
@@ -499,8 +507,28 @@
   </footer>
 </div>
 <script>
+  /* Set to an 11-character YouTube video ID to embed it in "Follow the build".
+     Empty shows the "Day 1 drops soon" card. */
+  var LATEST_YOUTUBE_ID = "";
+
   (function () {
     var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Latest video */
+    var slot = document.getElementById('latest-video');
+    if (slot && LATEST_YOUTUBE_ID.length === 11 && !/[^A-Za-z0-9_-]/.test(LATEST_YOUTUBE_ID)) {
+      var frame = document.createElement('div');
+      frame.className = 'kd-video-frame';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + LATEST_YOUTUBE_ID;
+      iframe.title = 'Latest KirkaDay build video';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      frame.appendChild(iframe);
+      slot.replaceChildren(frame);
+    }
 
     /* Scroll reveal */
     var reveal = document.querySelectorAll('[data-rv]');
@@ -570,20 +598,33 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
+  })();
+</script>
+<script>
+  /* Sign-up attribution: fill utm_* from the URL and referring_site from the
+     referrer. First-touch values are kept for the visit so they survive a click
+     through to another page. Also shows the inline error on ?error=1. */
+  (function () {
+    var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    var q = new URLSearchParams(location.search);
+    var seen = {};
+    try { seen = JSON.parse(sessionStorage.getItem('kd-attribution') || '{}') || {}; } catch (e) {}
+    KEYS.forEach(function (k) { var v = q.get(k); if (v) seen[k] = v.slice(0, 200); });
+    if (!seen.referring_site && document.referrer) {
+      try {
+        if (new URL(document.referrer).host !== location.host) seen.referring_site = document.referrer.slice(0, 500);
+      } catch (e) {}
+    }
+    try { sessionStorage.setItem('kd-attribution', JSON.stringify(seen)); } catch (e) {}
 
-    /* Sign-up + buyer forms. No backend yet: show the designed confirmation. */
-    Array.prototype.forEach.call(document.querySelectorAll('[data-kd-role="form"]'), function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var group = form.getAttribute('data-kd-group');
-        var done = document.querySelector('[data-kd-group="' + group + '"][data-kd-role="done"]');
-        form.classList.add('kd-hidden');
-        if (done) {
-          done.classList.remove('kd-hidden');
-          done.setAttribute('tabindex', '-1');
-          done.focus({ preventScroll: true });
-        }
+    var failed = q.get('error') === '1';
+    Array.prototype.forEach.call(document.querySelectorAll('form[data-signup]'), function (form) {
+      KEYS.concat('referring_site').forEach(function (k) {
+        var input = form.querySelector('input[name="' + k + '"]');
+        if (input && seen[k]) input.value = seen[k];
       });
+      var alert = form.querySelector('[data-signup-error]');
+      if (failed && alert) alert.hidden = false;
     });
   })();
 </script>
