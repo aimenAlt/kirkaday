@@ -19,7 +19,7 @@
   .sub b { font-weight: 400; color: #8E0B16; }
   .rule { width: 64px; height: 2px; background: #BE9A42; margin: 34px 0 20px; }
   .url { font-size: 18px; letter-spacing: 0.28em; text-transform: uppercase; color: #8F6E1E; }
-  .can { position: absolute; right: 84px; top: 42px; width: 360px; height: 574px; overflow: hidden;
+  .can { position: absolute; right: 84px; top: var(--ftop, 42px); width: 360px; height: var(--fh, 574px); overflow: hidden;
          border: 1px solid rgba(190,154,66,0.6); border-radius: 180px 180px 6px 6px; background: #EFE6DA;
          box-shadow: 0 40px 70px -40px rgba(43,26,18,0.45); }
   .can img { position: absolute; width: var(--w, 800px); left: var(--left, -231px); top: var(--top, -178px); }
@@ -52,7 +52,7 @@
     ['eyebrow', 'headline', 'sub', 'path'].forEach(function (k) {
       document.getElementById(k).innerHTML = q.get(k) || '';
     });
-    ['w', 'left', 'top'].forEach(function (k) {
+    ['w', 'left', 'top', 'ftop', 'fh'].forEach(function (k) {
       if (q.get(k)) document.documentElement.style.setProperty('--' + k, q.get(k));
     });
   </script>

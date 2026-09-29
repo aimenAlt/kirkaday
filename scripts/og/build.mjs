@@ -17,11 +17,14 @@ try {
   playwright = createRequire(path.join(globalRoot, 'noop.js'))('playwright');
 }
 
-// The can is framed on the logo and product name; the plate at the foot of
-// the arch sits over the on-pack callouts, and a corner tag marks the can as
-// a design preview. The sugar badge overlaps the wordmark's column, so it
-// can't be cropped out without cutting the name; it stays in frame.
-const CAN = { w: '1010px', left: '-326px', top: '-171px' };
+// The can (assets/can-hibiscus-900.webp, 900px wide) is framed on the logo
+// and product name at 1.385x (260 source px across the 360px arch):
+// - the arch's rounded top clips the "6g sugar" badge at the can's top-left;
+// - the plate at the foot of the arch starts at source y 586, just under
+//   "ENERGY", covering the caffeine line and the on-pack claim row.
+// A corner tag marks the can as a design preview. Re-check the crop by eye
+// whenever the can render changes.
+const CAN = { w: '1246px', left: '-457px', top: '-360px', ftop: '79px', fh: '537px' };
 
 const PAGES = [
   { name: 'home', eyebrow: 'Launching Spring 2027',
