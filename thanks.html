@@ -31,6 +31,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* /thanks only: get people to the confirmation email, then what comes next. */
+  .kd-ty-lead { margin-bottom: 26px; }
+  .kd-ty-open { margin: 0 0 20px; }
+  .kd-ty-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
+               padding: 14px 30px; line-height: 1.2; white-space: normal; }
+  .kd-ty-btn:focus-visible { outline: 2px solid #BE9A42; outline-offset: 3px; }
+  .kd-ty-btn-line { background: transparent; color: #8E0B16; border: 1px solid #8E0B16; }
+  .kd-ty-btn-line:hover { background: #8E0B16; color: #FCF7E9; }
+  .kd-ty-muted { font-size: 13.5px; line-height: 1.6; letter-spacing: 0.01em; color: #6E5A4C; margin: 0; max-width: 36em;
+                 text-wrap: pretty; }
+
+  .kd-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .kd-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 0 12px; align-items: start; padding-top: 16px;
+                 border-top: 1px solid rgba(190,154,66,0.5); }
+  .kd-step-num { grid-row: span 2; width: 30px; height: 30px; border: 1px solid rgba(190,154,66,0.75); border-radius: 50%;
+                 display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif;
+                 font-weight: 700; font-size: 14px; color: #8E0B16; background: #FDFAF1; }
+  .kd-step-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; line-height: 1.25; color: #2B1A12;
+                   margin: 4px 0 4px; }
+  .kd-step-text { font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.45; color: #5A473B; margin: 0; }
+
+  .kd-ty-share-url { margin: 12px 0 0; max-width: 560px; }
+  .kd-ty-share-url .kd-input { width: 100%; font-size: 13px; }
+  .kd-ty-note { display: flex; gap: 20px; align-items: flex-start; margin: 40px 0 0; }
+  .kd-ty-photo { width: 72px; height: 72px; border-radius: 50%; flex: 0 0 auto; display: block; object-fit: cover;
+                 border: 1px solid rgba(190,154,66,0.6); padding: 3px; background: #FDFAF1; }
+  .kd-ty-note p { font-family: 'EB Garamond', serif; font-size: 19px; line-height: 1.55; color: #3E2C22; margin: 0 0 8px; text-wrap: pretty; }
+  .kd-ty-note .kd-sign { font-size: 22px; margin: 0; }
+
+  @media (max-width: 640px) {
+    .kd-steps { grid-template-columns: 1fr; gap: 12px; }
+    .kd-steps li { padding-top: 12px; }
+  }
+  @media (max-width: 520px) {
+    .kd-ty-btn { display: flex; width: 100%; }
+    .kd-ty-note { gap: 14px; }
+    .kd-ty-photo { width: 56px; height: 56px; padding: 2px; }
+    .kd-ty-note p { font-size: 18px; }
+  }
+</style>
 </head>
 <body>
 <div class="kd-pattern"></div>
@@ -61,7 +102,35 @@
     <img class="kd-page-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
     <p class="kd-eyebrow">One more step</p>
     <h1 class="kd-title">Check your inbox to confirm.</h1>
-    <p class="kd-lead">While you wait, reply and tell me your go-to drink.</p>
+    <p class="kd-lead kd-ty-lead">I just sent you a confirmation email from Aimen Alt (hello@kirka.day). Tap Confirm and you're in.</p>
+    <p class="kd-ty-open" data-mail hidden><a class="kd-btn kd-ty-btn" href="/" target="_blank" rel="noopener" data-mail-link>Open your inbox</a></p>
+    <p class="kd-ty-muted">Not there in 2 minutes? Check Spam or Promotions. If it's there, move it to your inbox so Sunday's email lands in the right place.</p>
+
+    <hr class="kd-rule">
+    <p class="kd-eyebrow">What happens next</p>
+    <ol class="kd-steps">
+      <li><span class="kd-step-num" aria-hidden="true">1</span><h2 class="kd-step-title">Confirm your email</h2><p class="kd-step-text">Takes one tap.</p></li>
+      <li><span class="kd-step-num" aria-hidden="true">2</span><h2 class="kd-step-title">Welcome email</h2><p class="kd-step-text">A quick hello from me, right after you confirm.</p></li>
+      <li><span class="kd-step-num" aria-hidden="true">3</span><h2 class="kd-step-title">First build log</h2><p class="kd-step-text">Every Sunday. 2 minutes. What worked, what broke.</p></li>
+    </ol>
+
+    <div class="kd-ty-note">
+      <img class="kd-ty-photo" src="/assets/aimen-alt-160.webp" alt="Aimen Alt" width="160" height="160" loading="lazy" decoding="async">
+      <div>
+        <p>Thanks for following this early. I'm building KirkaDay from my kitchen in Houston and sharing all of it: the lab, the costs, the spills.</p>
+        <p class="kd-sign">— Aimen</p>
+      </div>
+    </div>
+
+    <hr class="kd-rule">
+    <p class="kd-eyebrow">Know someone who'd drink this?</p>
+    <button class="kd-btn kd-ty-btn kd-ty-btn-line" type="button" data-share>Share the build</button>
+    <p class="kd-sr" role="status" aria-live="polite" data-share-status></p>
+    <p class="kd-ty-share-url" data-share-fallback hidden>
+      <label class="kd-sr" for="share-url">Link to share</label>
+      <input class="kd-input" id="share-url" type="text" readonly value="https://kirka.day/join?utm_source=share&amp;utm_medium=thanks">
+    </p>
+
     <hr class="kd-rule">
     <p class="kd-eyebrow">Follow the build</p>
     <ul class="kd-social">
@@ -108,6 +177,85 @@
     var onScroll = function () { nav.style.boxShadow = (window.scrollY || 0) > 12 ? '0 12px 30px -24px rgba(43,26,18,0.5)' : 'none'; };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+</script>
+<script>
+  /* Open-your-inbox button from the domain the signup form saved, plus the share button. */
+  (function () {
+    var MAIL = {
+      gmail: ['Open Gmail', 'https://mail.google.com/mail/u/0/#search/from%3Ahello%40kirka.day+in%3Aanywhere'],
+      outlook: ['Open Outlook', 'https://outlook.live.com/mail/0/'],
+      yahoo: ['Open Yahoo Mail', 'https://mail.yahoo.com/'],
+      icloud: ['Open iCloud Mail', 'https://www.icloud.com/mail']
+    };
+    var DOMAINS = {
+      'gmail.com': 'gmail', 'googlemail.com': 'gmail',
+      'outlook.com': 'outlook', 'hotmail.com': 'outlook', 'live.com': 'outlook', 'msn.com': 'outlook',
+      'yahoo.com': 'yahoo', 'ymail.com': 'yahoo',
+      'icloud.com': 'icloud', 'me.com': 'icloud', 'mac.com': 'icloud'
+    };
+    var domain = '';
+    try { domain = sessionStorage.getItem('kd_mail_domain') || ''; } catch (e) {}
+    var mail = Object.prototype.hasOwnProperty.call(DOMAINS, domain) ? MAIL[DOMAINS[domain]] : null;
+    var wrap = document.querySelector('[data-mail]');
+    var link = document.querySelector('[data-mail-link]');
+    if (mail && wrap && link) {
+      link.textContent = mail[0];
+      link.href = mail[1];
+      wrap.hidden = false;
+    }
+
+    var SHARE_URL = 'https://kirka.day/join?utm_source=share&utm_medium=thanks';
+    var SHARE_TEXT = "I'm following Aimen build a sparkling hibiscus energy drink from scratch. Join me:";
+    var btn = document.querySelector('[data-share]');
+    var status = document.querySelector('[data-share-status]');
+    if (!btn) return;
+    var label = btn.textContent;
+    var timer;
+    var copied = function () {
+      btn.textContent = 'Link copied';
+      if (status) status.textContent = 'Link copied to clipboard';
+      clearTimeout(timer);
+      timer = setTimeout(function () { btn.textContent = label; if (status) status.textContent = ''; }, 2000);
+    };
+    var legacyCopy = function () {
+      var ta = document.createElement('textarea');
+      ta.value = SHARE_URL;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      btn.focus();
+      if (ok) return copied();
+      // Clipboard blocked (e.g. the share sheet used up the tap): show the link to copy by hand.
+      var box = document.querySelector('[data-share-fallback]');
+      if (!box) return;
+      box.hidden = false;
+      var field = box.querySelector('input');
+      field.focus();
+      field.select();
+    };
+    var copy = function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(SHARE_URL).then(copied, legacyCopy);
+      } else {
+        legacyCopy();
+      }
+    };
+    btn.addEventListener('click', function () {
+      if (navigator.share) {
+        navigator.share({ title: 'KirkaDay', text: SHARE_TEXT, url: SHARE_URL }).catch(function (err) {
+          // Closing the share sheet is not a failure; anything else falls back to copying.
+          if (!err || err.name !== 'AbortError') copy();
+        });
+      } else {
+        copy();
+      }
+    });
   })();
 </script>
 </body>

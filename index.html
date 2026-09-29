@@ -602,7 +602,8 @@
 <script>
   /* Sign-up attribution: fill utm_* from the URL and referring_site from the
      referrer. First-touch values are kept for the visit so they survive a click
-     through to another page. Also shows the inline error on ?error=1. */
+     through to another page. Also shows the inline error on ?error=1 and
+     remembers the email's domain for the /thanks page. */
   (function () {
     var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
     var q = new URLSearchParams(location.search);
@@ -624,6 +625,16 @@
       });
       var alert = form.querySelector('[data-signup-error]');
       if (failed && alert) alert.hidden = false;
+      // Keep only the mail domain (never the address) so /thanks can offer
+      // an "Open Gmail"-style button after the server redirects there.
+      form.addEventListener('submit', function () {
+        try {
+          var email = (form.querySelector('input[name="email"]') || {}).value || '';
+          var at = email.lastIndexOf('@');
+          if (at > 0) sessionStorage.setItem('kd_mail_domain', email.slice(at + 1).trim().toLowerCase().slice(0, 253));
+          else sessionStorage.removeItem('kd_mail_domain');
+        } catch (e) {}
+      });
     });
   })();
 </script>
