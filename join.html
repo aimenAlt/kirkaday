@@ -6,7 +6,7 @@
 <title>Follow the build | KirkaDay</title>
 <meta name="description" content="A 2-minute email every Sunday: what worked, what broke, and first dibs on Houston tastings. KirkaDay sparkling hibiscus energy launches Spring 2027.">
 <link rel="canonical" href="https://kirka.day/join">
-<meta name="theme-color" content="#FCF7E9">
+<meta name="theme-color" content="#C8102E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KirkaDay">
@@ -22,13 +22,16 @@
 <meta name="twitter:description" content="A 2-minute email every Sunday: what worked, what broke, and first dibs on Houston tastings. KirkaDay sparkling hibiscus energy launches Spring 2027.">
 <meta name="twitter:image" content="https://kirka.day/assets/og/join.jpg">
 
-<link rel="icon" href="/assets/icon-monogram.ico" sizes="any">
-<link rel="icon" type="image/png" href="/assets/icon-monogram-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
@@ -37,11 +40,10 @@
 <nav class="kd-nav" data-nav="1" aria-label="Main">
   <div class="kd-nav-row">
     <a href="/" class="kd-nav-brand" aria-label="KirkaDay home">
-      <img class="kd-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
-      <picture>
-        <source srcset="/assets/logo-wordmark.webp" type="image/webp">
-        <img class="kd-word" src="/assets/logo-wordmark.png" alt="KirkaDay" width="696" height="138">
-      </picture>
+        <picture>
+          <source media="(max-width:360px)" srcset="/assets/brand/KirkaDay_Icon_Web_Metallic.svg" width="935" height="935">
+          <img class="kd-nav-logo" src="/assets/brand/KirkaDay_Logo_Horizontal_Web_Metallic.svg" alt="KirkaDay" width="4283" height="1564">
+        </picture>
     </a>
     <div class="kd-nav-group">
       <div class="kd-nav-links">
@@ -57,7 +59,7 @@
 
 <main class="kd-page">
   <div class="kd-wrap">
-    <img class="kd-page-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
+    <img class="kd-page-mark" src="/assets/brand/KirkaDay_Icon_Web_Metallic.svg" alt="" width="935" height="935">
     <p class="kd-eyebrow">The Sunday email · KirkaDay</p>
     <h1 class="kd-title">Follow the build.</h1>
     <p class="kd-lead">A 2-minute email every Sunday: what worked, what broke, and first dibs on Houston tastings.</p>
@@ -86,10 +88,7 @@
 <footer class="kd-footer">
   <div class="kd-footer-grid">
     <div>
-      <div class="kd-footer-brand">
-        <img src="/assets/logo-mark.webp" alt="" width="364" height="396">
-        <span>KirkaDay</span>
-      </div>
+      <div class="kd-footer-brand"><img src="/assets/brand/KirkaDay_Logo_Horizontal_Web_Reversed.svg" alt="KirkaDay" width="4283" height="1564" loading="lazy" decoding="async"></div>
       <div class="kd-footer-tag">Sparkling hibiscus energy<br>One flower. Many cultures. One new chapter.</div>
     </div>
     <nav class="kd-footer-col" aria-label="Footer">
@@ -115,7 +114,7 @@
   (function () {
     var nav = document.querySelector('[data-nav]');
     if (!nav) return;
-    var onScroll = function () { nav.style.boxShadow = (window.scrollY || 0) > 12 ? '0 12px 30px -24px rgba(43,26,18,0.5)' : 'none'; };
+    var onScroll = function () { nav.style.boxShadow = (window.scrollY || 0) > 12 ? '0 12px 30px -24px rgba(42,26,29,0.5)' : 'none'; };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();

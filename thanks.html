@@ -7,29 +7,32 @@
 <meta name="description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://kirka.day/thanks">
-<meta name="theme-color" content="#FCF7E9">
+<meta name="theme-color" content="#C8102E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KirkaDay">
 <meta property="og:title" content="Check your inbox | KirkaDay">
 <meta property="og:description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
 <meta property="og:url" content="https://kirka.day/thanks">
-<meta property="og:image" content="https://kirka.day/assets/og/home.jpg">
+<meta property="og:image" content="https://kirka.day/og-image-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="KirkaDay can with the line Sparkling Hibiscus Energy, launching Spring 2027 in Houston">
+<meta property="og:image:alt" content="The KirkaDay logo, a hibiscus symbol and wordmark, framed by the KirkaDay hibiscus pattern">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Check your inbox | KirkaDay">
 <meta name="twitter:description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
-<meta name="twitter:image" content="https://kirka.day/assets/og/home.jpg">
+<meta name="twitter:image" content="https://kirka.day/og-image-1200x630.png">
 
-<link rel="icon" href="/assets/icon-monogram.ico" sizes="any">
-<link rel="icon" type="image/png" href="/assets/icon-monogram-32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
   /* /thanks only: get people to the confirmation email, then what comes next. */
@@ -37,29 +40,29 @@
   .kd-ty-open { margin: 0 0 20px; }
   .kd-ty-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
                padding: 14px 30px; line-height: 1.2; white-space: normal; }
-  .kd-ty-btn:focus-visible { outline: 2px solid #BE9A42; outline-offset: 3px; }
-  .kd-ty-btn-line { background: transparent; color: #8E0B16; border: 1px solid #8E0B16; }
-  .kd-ty-btn-line:hover { background: #8E0B16; color: #FCF7E9; }
-  .kd-ty-muted { font-size: 13.5px; line-height: 1.6; letter-spacing: 0.01em; color: #6E5A4C; margin: 0; max-width: 36em;
+  .kd-ty-btn:focus-visible { outline: 2px solid var(--kd-deep); outline-offset: 3px; }
+  .kd-ty-btn-line { background: transparent; color: var(--kd-red); border: 1px solid var(--kd-red); }
+  .kd-ty-btn-line:hover { background: var(--kd-red); color: var(--kd-white); }
+  .kd-ty-muted { font-size: 13.5px; line-height: 1.6; letter-spacing: 0.01em; color: var(--kd-ink-muted); margin: 0; max-width: 36em;
                  text-wrap: pretty; }
 
   .kd-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
   .kd-steps li { display: grid; grid-template-columns: 30px 1fr; gap: 0 12px; align-items: start; padding-top: 16px;
-                 border-top: 1px solid rgba(190,154,66,0.5); }
-  .kd-step-num { grid-row: span 2; width: 30px; height: 30px; border: 1px solid rgba(190,154,66,0.75); border-radius: 50%;
-                 display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif;
-                 font-weight: 700; font-size: 14px; color: #8E0B16; background: #FDFAF1; }
-  .kd-step-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; line-height: 1.25; color: #2B1A12;
+                 border-top: 1px solid rgba(189,155,96,0.5); }
+  .kd-step-num { grid-row: span 2; width: 30px; height: 30px; border: 1px solid rgba(189,155,96,0.75); border-radius: 50%;
+                 display: flex; align-items: center; justify-content: center; font-family:var(--kd-font-display);
+                 font-weight: 700; font-size: 14px; color: var(--kd-red); background: var(--kd-white); }
+  .kd-step-title { font-family:var(--kd-font-display); font-weight: 700; font-size: 16px; line-height: 1.3; letter-spacing: 0.02em; color: var(--kd-ink);
                    margin: 4px 0 4px; }
-  .kd-step-text { font-family: 'EB Garamond', serif; font-size: 16.5px; line-height: 1.45; color: #5A473B; margin: 0; }
+  .kd-step-text { font-family:var(--kd-font-body); font-size: 16px; line-height: 1.5; color: var(--kd-ink-soft); margin: 0; }
 
   .kd-ty-share-url { margin: 12px 0 0; max-width: 560px; }
   .kd-ty-share-url .kd-input { width: 100%; font-size: 13px; }
   .kd-ty-note { display: flex; gap: 20px; align-items: flex-start; margin: 40px 0 0; }
   .kd-ty-photo { width: 72px; height: 72px; border-radius: 50%; flex: 0 0 auto; display: block; object-fit: cover;
-                 border: 1px solid rgba(190,154,66,0.6); padding: 3px; background: #FDFAF1; }
-  .kd-ty-note p { font-family: 'EB Garamond', serif; font-size: 19px; line-height: 1.55; color: #3E2C22; margin: 0 0 8px; text-wrap: pretty; }
-  .kd-ty-note .kd-sign { font-size: 22px; margin: 0; }
+                 border: 1px solid rgba(189,155,96,0.6); padding: 3px; background: var(--kd-white); }
+  .kd-ty-note p { font-family:var(--kd-font-body); font-size: 17px; line-height: 1.6; color: var(--kd-ink); margin: 0 0 8px; text-wrap: pretty; }
+  .kd-ty-note .kd-sign { font-family: var(--kd-font-display); font-weight: 600; font-size: 19px; color: var(--kd-red); margin: 0; }
 
   @media (max-width: 640px) {
     .kd-steps { grid-template-columns: 1fr; gap: 12px; }
@@ -69,7 +72,7 @@
     .kd-ty-btn { display: flex; width: 100%; }
     .kd-ty-note { gap: 14px; }
     .kd-ty-photo { width: 56px; height: 56px; padding: 2px; }
-    .kd-ty-note p { font-size: 18px; }
+    .kd-ty-note p { font-size: 16px; }
   }
 </style>
 </head>
@@ -79,11 +82,10 @@
 <nav class="kd-nav" data-nav="1" aria-label="Main">
   <div class="kd-nav-row">
     <a href="/" class="kd-nav-brand" aria-label="KirkaDay home">
-      <img class="kd-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
-      <picture>
-        <source srcset="/assets/logo-wordmark.webp" type="image/webp">
-        <img class="kd-word" src="/assets/logo-wordmark.png" alt="KirkaDay" width="696" height="138">
-      </picture>
+        <picture>
+          <source media="(max-width:360px)" srcset="/assets/brand/KirkaDay_Icon_Web_Metallic.svg" width="935" height="935">
+          <img class="kd-nav-logo" src="/assets/brand/KirkaDay_Logo_Horizontal_Web_Metallic.svg" alt="KirkaDay" width="4283" height="1564">
+        </picture>
     </a>
     <div class="kd-nav-group">
       <div class="kd-nav-links">
@@ -99,7 +101,7 @@
 
 <main class="kd-page">
   <div class="kd-wrap">
-    <img class="kd-page-mark" src="/assets/logo-mark.webp" alt="" width="364" height="396">
+    <img class="kd-page-mark" src="/assets/brand/KirkaDay_Icon_Web_Metallic.svg" alt="" width="935" height="935">
     <p class="kd-eyebrow">One more step</p>
     <h1 class="kd-title">Check your inbox to confirm.</h1>
     <p class="kd-lead kd-ty-lead">I just sent you a confirmation email from Aimen Alt (hello@kirka.day). Tap Confirm and you're in.</p>
@@ -145,10 +147,7 @@
 <footer class="kd-footer">
   <div class="kd-footer-grid">
     <div>
-      <div class="kd-footer-brand">
-        <img src="/assets/logo-mark.webp" alt="" width="364" height="396">
-        <span>KirkaDay</span>
-      </div>
+      <div class="kd-footer-brand"><img src="/assets/brand/KirkaDay_Logo_Horizontal_Web_Reversed.svg" alt="KirkaDay" width="4283" height="1564" loading="lazy" decoding="async"></div>
       <div class="kd-footer-tag">Sparkling hibiscus energy<br>One flower. Many cultures. One new chapter.</div>
     </div>
     <nav class="kd-footer-col" aria-label="Footer">
@@ -174,7 +173,7 @@
   (function () {
     var nav = document.querySelector('[data-nav]');
     if (!nav) return;
-    var onScroll = function () { nav.style.boxShadow = (window.scrollY || 0) > 12 ? '0 12px 30px -24px rgba(43,26,18,0.5)' : 'none'; };
+    var onScroll = function () { nav.style.boxShadow = (window.scrollY || 0) > 12 ? '0 12px 30px -24px rgba(42,26,29,0.5)' : 'none'; };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();
