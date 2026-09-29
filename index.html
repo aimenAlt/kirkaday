@@ -55,6 +55,18 @@
       [data-kd="four-up"] { grid-template-columns: minmax(0, 1fr) !important; }
     }
 
+    /* Even section rhythm on phones: the desktop 100px bands are too tall at 390px. */
+    @media (max-width: 600px) {
+      #can, #traditions, #ingredients, #story, #follow, #list, #faq { padding: 72px 20px !important; }
+    }
+
+    /* Two-column hero: crop the can photo's empty top and bottom margins so the
+       arch ends level with the sign-up column instead of hanging ~100px below it. */
+    @media (min-width: 900px) {
+      [data-hero-frame] { height: 440px; }
+      [data-hero-frame] img { height: 100% !important; object-fit: cover; object-position: 50% 40%; }
+    }
+
     /* Keep the sign-up above the fold on phones. */
     @media (max-width: 600px) {
       [data-kd="hero"] { padding: 30px 18px 36px !important; }
@@ -68,6 +80,24 @@
     @media (prefers-reduced-motion: reduce) {
       [data-marquee] { animation: none !important; }
       [style*="kd-drift"] { animation: none !important; }
+    }
+
+    /* Origin story. Desktop: text + signature on the left; the photo stretches to
+       the left column's height with the quote card under it. Phone: one column,
+       H2, photo, copy, quote, signature. */
+    .kd-story-grid { display: flex; flex-direction: column; }
+    .kd-story-left, .kd-story-right { display: contents; }
+    .kd-story-head { order: 1; }
+    .kd-story-photo { order: 2; height: clamp(260px, 72vw, 420px); margin: 0 0 28px !important; }
+    .kd-story-body { order: 3; }
+    .kd-story-quote { order: 4; margin-top: 32px; }
+    .kd-story-sig { order: 5; margin-top: 28px; }
+    @media (min-width: 960px) {
+      .kd-story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: stretch; }
+      .kd-story-left, .kd-story-right { display: flex; flex-direction: column; }
+      .kd-story-photo { height: auto; flex: 1 1 auto; min-height: 380px; margin: 0 !important; }
+      .kd-story-quote { margin-top: 26px; }
+      .kd-story-sig { margin-top: 36px; }
     }
 
     /* Follow the build */
@@ -250,7 +280,7 @@
     </div>
   </section>
 
-  <section id="traditions" style="background:var(--kd-deep);color:var(--kd-cream);padding:104px 28px;position:relative;z-index:1;overflow:hidden">
+  <section id="traditions" style="background:var(--kd-deep);color:var(--kd-cream);padding:100px 28px;position:relative;z-index:1;overflow:hidden">
     <div data-pattern="1" style="position:absolute;inset:0;background-image:url(&quot;/assets/brand/pattern/KirkaDay_Pattern_Seamless_FullColor_Transparent_2048px.png&quot;);background-image:image-set(url(&quot;/assets/brand/pattern/KirkaDay_Pattern_Seamless_FullColor_Transparent_2048px.webp&quot;) type(&quot;image/webp&quot;),url(&quot;/assets/brand/pattern/KirkaDay_Pattern_Seamless_FullColor_Transparent_2048px.png&quot;) type(&quot;image/png&quot;));background-repeat:repeat;background-size:320px auto;opacity:0.08;mix-blend-mode:screen;pointer-events:none"></div>
     <div style="max-width:1180px;margin:0 auto;position:relative">
 
@@ -299,7 +329,7 @@
     </div>
   </section>
 
-  <section id="ingredients" style="padding:104px 28px;position:relative;z-index:1">
+  <section id="ingredients" style="padding:100px 28px;position:relative;z-index:1">
     <div style="max-width:1180px;margin:0 auto">
 
       <div data-rv="1" style="max-width:34em;margin-bottom:52px;opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
@@ -352,38 +382,42 @@
     </div>
   </section>
 
-  <section id="story" style="padding:100px 28px;position:relative;z-index:1;background:var(--kd-cream)">
-    <div style="max-width:1180px;margin:0 auto">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:56px;align-items:start">
+  <section id="story" class="kd-story" style="padding:100px 28px;position:relative;z-index:1;background:var(--kd-cream)">
+    <div class="kd-story-grid" style="max-width:1180px;margin:0 auto">
 
-        <div data-rv="1" style="opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+      <div class="kd-story-left" data-rv="1" style="opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)">
+        <div class="kd-story-head">
           <div style="font-size:11px;letter-spacing:0.3em;font-weight:500;text-transform:uppercase;color:var(--kd-deep);margin-bottom:18px">Where I entered the story</div>
           <h2 style="font-family:var(--kd-font-display);font-weight:700;font-size:clamp(25px,2.9vw,40px);line-height:1.18;margin:0 0 28px;color:var(--kd-ink);text-wrap:balance">It started at my family's table.</h2>
-
-          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.56;color:var(--kd-ink);margin:0 0 22px">Growing up, there was always a pitcher of cold hibiscus in our fridge: deep red, tart and sweet, and always on the table when the family sat down together. For years I thought of it as something from our part of the world.</p>
-          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0 0 22px">Then I learned it's poured almost everywhere: bissap in West Africa, agua de jamaica in Mexico, sorrel in the Caribbean, karkadeh in Egypt and Sudan. One flower, a world of traditions.</p>
-          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0">I wanted a version that fits into a normal day, sparkling and with some energy, so I started building one.</p>
         </div>
 
-        <div data-rv="1" data-rv-delay="140" style="opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
-          <div style="position:sticky;top:118px">
-            <div style="position:relative;width:100%;height:clamp(340px,38vw,470px);border:1px solid rgba(189,155,96,0.5);padding:10px;background:var(--kd-white)">
-              <div style="position:relative;width:100%;height:100%">
-                <picture><source type="image/webp" srcset="/assets/pitcher-sunset-600.webp 600w, /assets/pitcher-sunset-1100.webp 1100w" sizes="(max-width: 900px) 100vw, 560px"><img src="/assets/pitcher-sunset-1100.jpg" alt="A glass pitcher of deep red hibiscus tea and two glasses on a wooden table in late afternoon light" width="1100" height="956" loading="lazy" decoding="async" class="kd-shot"></picture>
-              </div>
-            </div>
-            <div style="margin-top:26px;border:1px solid rgba(189,155,96,0.5);background:var(--kd-white);padding:28px">
-              <div style="font-family:var(--kd-font-body);font-size:16px;line-height:1.7;color:var(--kd-ink-soft);margin:0 0 20px">One flower, poured for generations<br>at tables around the world.</div>
-              <div style="font-family:var(--kd-font-display);font-weight:600;font-size:clamp(17px,1.6vw,21px);line-height:1.4;color:var(--kd-red)">Now it comes sparkling, in a slim can.</div>
-            </div>
-            <div style="display:flex;align-items:center;gap:15px;margin-top:26px;padding-top:24px;border-top:1px solid rgba(189,155,96,0.5)">
-              <img src="/assets/brand/KirkaDay_Monogram_K_Metallic_RGB.svg" alt="" style="height:50px;width:auto;display:block" width="1004" height="1050" loading="lazy" decoding="async">
-              <div>
-                <div style="font-family:var(--kd-font-display);font-weight:600;font-size:17px;letter-spacing:0.02em;color:var(--kd-ink)">Aimen</div>
-                <div style="font-size:10.5px;letter-spacing:0.2em;font-weight:500;text-transform:uppercase;color:var(--kd-deep);margin-top:4px">Founder · Houston, TX</div>
-              </div>
-            </div>
+        <div class="kd-story-body">
+          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink);margin:0 0 20px">Growing up, there was always a pitcher of cold hibiscus in our fridge: deep red, tart and sweet, and on the table whenever the family sat down together. For years I thought of it as something from our part of the world.</p>
+          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0 0 20px">Then I learned it's poured almost everywhere: bissap in West Africa, agua de jamaica in Mexico, sorrel in the Caribbean, karkadeh in Egypt and Sudan. One flower, a world of traditions.</p>
+          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0 0 20px">I'm obsessed with food, and I kept running into the same trade-off: drinks made with better ingredients either taste like a compromise or cost twice as much. Somewhere along the way we all just accepted that. I didn't want to.</p>
+          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0 0 20px">So I started making my own in my kitchen here in Houston: a sparkling hibiscus drink with some energy, something that fits into a normal day. I've been at it for months, and now I'm working with a beverage lab to get it into a can.</p>
+          <p style="font-family:var(--kd-font-body);font-size:16px;line-height:1.62;color:var(--kd-ink-soft);margin:0">I'm building it in public, mistakes included. Every Sunday I send a short email about what worked, what broke, and when the first Houston tastings are.</p>
+          <p style="margin:24px 0 0"><a class="kd-stock" href="/join">Follow the build →</a></p>
+        </div>
+
+        <div class="kd-story-sig" style="display:flex;align-items:center;gap:15px;padding-top:24px;border-top:1px solid rgba(189,155,96,0.5)">
+          <img src="/assets/brand/KirkaDay_Monogram_K_Metallic_RGB.svg" alt="" style="height:50px;width:auto;display:block" width="1004" height="1050" loading="lazy" decoding="async">
+          <div>
+            <div style="font-family:var(--kd-font-display);font-weight:600;font-size:17px;letter-spacing:0.02em;color:var(--kd-ink)">Aimen</div>
+            <div style="font-size:10.5px;letter-spacing:0.2em;font-weight:500;text-transform:uppercase;color:var(--kd-deep);margin-top:4px">Founder · Houston, TX</div>
           </div>
+        </div>
+      </div>
+
+      <div class="kd-story-right" data-rv="1" data-rv-delay="140" style="opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)">
+        <figure class="kd-story-photo" style="margin:0;border:1px solid rgba(189,155,96,0.5);padding:10px;background:var(--kd-white)">
+          <div style="position:relative;width:100%;height:100%">
+            <picture><source type="image/webp" srcset="/assets/pitcher-sunset-600.webp 600w, /assets/pitcher-sunset-1100.webp 1100w" sizes="(max-width: 959px) 100vw, 560px"><img src="/assets/pitcher-sunset-1100.jpg" alt="A glass pitcher of deep red hibiscus tea and two glasses on a wooden table in late afternoon light" width="1100" height="956" loading="lazy" decoding="async" class="kd-shot"></picture>
+          </div>
+        </figure>
+        <div class="kd-story-quote" style="border:1px solid rgba(189,155,96,0.5);background:var(--kd-white);padding:28px">
+          <div style="font-family:var(--kd-font-body);font-size:16px;line-height:1.7;color:var(--kd-ink-soft);margin:0 0 20px">One flower, poured for generations<br>at tables around the world.</div>
+          <div style="font-family:var(--kd-font-display);font-weight:600;font-size:clamp(17px,1.6vw,21px);line-height:1.4;color:var(--kd-red)">Now it comes sparkling, in a slim can.</div>
         </div>
       </div>
     </div>
