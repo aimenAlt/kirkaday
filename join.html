@@ -79,6 +79,7 @@
       <input type="hidden" name="utm_term" value="">
       <input type="hidden" name="utm_content" value="">
       <input type="hidden" name="referring_site" value="">
+      <input type="hidden" name="ts" value="">
       <div class="kd-hp" aria-hidden="true"><label for="join-company">Company</label><input id="join-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
     </form>
     <p class="kd-fine">Add your ZIP and you'll hear first about tastings near you · Unsubscribe anytime · <a href="/privacy">Privacy</a> · <a href="/log">Past emails</a></p>
@@ -123,7 +124,8 @@
   /* Sign-up attribution: fill utm_* from the URL and referring_site from the
      referrer. First-touch values are kept for the visit so they survive a click
      through to another page. Also shows the inline error on ?error=1 and
-     remembers the email's domain for the /thanks page. */
+     posts the form as JSON, keeping the email's domain and the subscription
+     id for the /thanks page. */
   (function () {
     var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
     var q = new URLSearchParams(location.search);
@@ -145,15 +147,47 @@
       });
       var alert = form.querySelector('[data-signup-error]');
       if (failed && alert) alert.hidden = false;
-      // Keep only the mail domain (never the address) so /thanks can offer
-      // an "Open Gmail"-style button after the server redirects there.
-      form.addEventListener('submit', function () {
-        try {
-          var email = (form.querySelector('input[name="email"]') || {}).value || '';
-          var at = email.lastIndexOf('@');
-          if (at > 0) sessionStorage.setItem('kd_mail_domain', email.slice(at + 1).trim().toLowerCase().slice(0, 253));
-          else sessionStorage.removeItem('kd_mail_domain');
-        } catch (e) {}
+      // Time on form: the server drops submissions made under 2 seconds.
+      var rendered = Date.now();
+      var ts = form.querySelector('input[name="ts"]');
+      if (ts) ts.value = String(rendered);
+      var busy = false;
+      form.addEventListener('submit', function (ev) {
+        if (!window.fetch) return; // Old browser: plain form post.
+        ev.preventDefault();
+        if (busy) return;
+        busy = true;
+        var button = form.querySelector('button[type="submit"]');
+        if (button) button.disabled = true;
+        if (alert) alert.hidden = true;
+        var body = {};
+        Array.prototype.forEach.call(form.elements, function (el) { if (el.name) body[el.name] = el.value; });
+        body.elapsed = String(Date.now() - rendered);
+        var failed = function (err) {
+          if (err) console.error('[signup]', err);
+          busy = false;
+          if (button) button.disabled = false;
+          if (alert) alert.hidden = false;
+        };
+        fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(body)
+        }).then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (d) {
+            if (!r.ok || !d || !d.ok) return failed(new Error('subscribe failed: ' + r.status + ' ' + ((d && d.error) || '')));
+            // Keep only the mail domain (never the address) for the "Find my welcome
+            // email" button, and the subscription id for the /thanks poll.
+            try {
+              var at = body.email.lastIndexOf('@');
+              if (at > 0) sessionStorage.setItem('kd_mail_domain', body.email.slice(at + 1).trim().toLowerCase().slice(0, 253));
+              else sessionStorage.removeItem('kd_mail_domain');
+              if (d.id) sessionStorage.setItem('kd_sid', d.id);
+              else sessionStorage.removeItem('kd_sid');
+            } catch (e) {}
+            location.href = '/thanks';
+          });
+        }).catch(failed);
       });
     });
   })();

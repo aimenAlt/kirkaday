@@ -1,8 +1,15 @@
 // POST /api/subscribe: adds an email to the KirkaDay Beehiiv publication.
 //
-// Accepts application/x-www-form-urlencoded (the plain HTML forms, which must
-// work with JS off) and application/json. Form posts get a 303 to /thanks, or
-// back to the page they came from with ?error=1. JSON callers get {ok}.
+// Single opt-in: the subscription is active immediately and Beehiiv sends the
+// welcome email, so bots are filtered here instead of by a confirmation click:
+// a honeypot field, a minimum time on the form, server-side email validation
+// and capped input lengths. Anything that trips the bot checks gets a fake
+// success and never reaches Beehiiv.
+//
+// The site's forms post JSON (fetch) and get {ok, id, status}; id is the
+// Beehiiv subscription id, which /thanks uses for the go-to-drink poll.
+// application/x-www-form-urlencoded posts still work and get a 303 to /thanks,
+// or back to the page they came from with ?error=1.
 //
 // Needs BEEHIIV_API_KEY in the server environment. It is never sent to the
 // browser and never logged.
@@ -15,6 +22,8 @@ const FORM_PAGES = { home: '/', join: '/join' };
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[A-Za-z]{2,}$/;
 const MAX_BODY = 16 * 1024;
 const TIMEOUT_MS = 8000;
+// Real people take longer than this between the form rendering and submitting.
+const MIN_FORM_MS = 2000;
 
 function first(v) {
   return Array.isArray(v) ? v[0] : v;
@@ -129,11 +138,18 @@ module.exports = async function handler(req, res) {
   const rawSource = text(input.source, 20).toLowerCase();
   const source = SOURCES.includes(rawSource) ? rawSource : 'other';
 
-  const ok = () => (isJson ? json(res, 200, { ok: true }) : redirect(res, '/thanks'));
+  const ok = (sub) => (isJson ? json(res, 200, sub ? { ok: true, id: sub.id, status: sub.status } : { ok: true }) : redirect(res, '/thanks'));
   const fail = (status, error) => (isJson ? json(res, status, { ok: false, error }) : redirect(res, errorLocation(req, source)));
 
   // Honeypot: people never see this field, so anything in it is a bot.
   if (text(input.company, 200)) return ok();
+
+  // Time on form, measured in the browser (so client clock skew can't matter)
+  // from when the form rendered. Too fast is a bot. Missing means the page's
+  // script didn't run, so the visitor gets the normal error and the contact email.
+  const elapsedRaw = text(input.elapsed, 20);
+  if (!/^\d{1,15}$/.test(elapsedRaw)) return fail(400, 'missing_timing');
+  if (Number(elapsedRaw) < MIN_FORM_MS) return ok();
 
   const email = text(input.email, 254).toLowerCase();
   if (!EMAIL_RE.test(email)) return fail(400, 'invalid_email');
@@ -150,7 +166,7 @@ module.exports = async function handler(req, res) {
     email,
     reactivate_existing: false,
     send_welcome_email: true,
-    double_opt_override: 'on',
+    double_opt_override: 'off',
   };
   for (const key of UTM_KEYS) {
     const v = text(input[key], 200);
@@ -175,7 +191,12 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
-    if (r.ok) return ok();
+    if (r.ok) {
+      let sub = {};
+      try { sub = ((await r.json()) || {}).data || {}; } catch (e) { /* keep {} */ }
+      const id = typeof sub.id === 'string' && /^sub_[0-9a-f-]{36}$/i.test(sub.id) ? sub.id : null;
+      return ok({ id, status: typeof sub.status === 'string' ? sub.status : null });
+    }
     let detail = '';
     try { detail = (await r.text()).slice(0, 500).split(email).join('<email>'); } catch (e) { /* ignore */ }
     console.error('[subscribe] Beehiiv responded %d (source=%s): %s', r.status, source, detail);

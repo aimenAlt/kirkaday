@@ -9,7 +9,7 @@ const calls = [];
 let beehiivStatus = 201;
 globalThis.fetch = async (url, init) => {
   calls.push({ url, init, body: JSON.parse(init.body) });
-  return new Response(JSON.stringify({ data: {} }), { status: beehiivStatus });
+  return new Response(JSON.stringify({ data: { id: 'sub_3f1c2b9a-1d2e-4f50-9a7b-0c1d2e3f4a5b', status: 'active' } }), { status: beehiivStatus });
 };
 process.env.BEEHIIV_API_KEY = 'test-key-not-real';
 delete process.env.BEEHIIV_PUBLICATION_ID;
@@ -29,8 +29,10 @@ const request = (body, headers = {}, method = 'POST') =>
     if (body) req.write(body);
     req.end();
   });
+// A human-paced submission: the page script reports 5s on the form.
 const form = (fields, headers = {}) =>
-  request(new URLSearchParams(fields).toString(), { 'Content-Type': 'application/x-www-form-urlencoded', ...headers });
+  request(new URLSearchParams({ elapsed: '5000', ...fields }).toString(), { 'Content-Type': 'application/x-www-form-urlencoded', ...headers });
+const post = (obj) => request(JSON.stringify({ elapsed: '5000', ...obj }), { 'Content-Type': 'application/json', Accept: 'application/json' });
 
 const results = [];
 async function test(name, fn) {
@@ -56,7 +58,7 @@ await test('form post sends the right Beehiiv request and 303s to /thanks', asyn
     email: 'someone@example.com',
     reactivate_existing: false,
     send_welcome_email: true,
-    double_opt_override: 'on',
+    double_opt_override: 'off',
     utm_source: 'tiktok',
     utm_medium: 'social',
     utm_campaign: 'day1',
@@ -66,12 +68,12 @@ await test('form post sends the right Beehiiv request and 303s to /thanks', asyn
   });
 });
 
-await test('JSON post returns {ok:true}; no zip or UTMs means none sent; unknown source -> other', async () => {
-  const r = await request(JSON.stringify({ email: 'a@b.co', source: 'tiktok-bio' }), { 'Content-Type': 'application/json' });
+await test('JSON post returns {ok, id, status}; no zip or UTMs means none sent; unknown source -> other', async () => {
+  const r = await post({ email: 'a@b.co', source: 'tiktok-bio' });
   assert.equal(r.status, 200);
-  assert.deepEqual(JSON.parse(r.body), { ok: true });
+  assert.deepEqual(JSON.parse(r.body), { ok: true, id: 'sub_3f1c2b9a-1d2e-4f50-9a7b-0c1d2e3f4a5b', status: 'active' });
   assert.deepEqual(calls[0].body, {
-    email: 'a@b.co', reactivate_existing: false, send_welcome_email: true, double_opt_override: 'on',
+    email: 'a@b.co', reactivate_existing: false, send_welcome_email: true, double_opt_override: 'off',
     custom_fields: [{ name: 'source', value: 'other' }],
   });
 });
@@ -86,6 +88,36 @@ await test('honeypot short-circuits: no API call, 303 to /thanks', async () => {
   assert.equal(r.status, 303);
   assert.equal(r.headers.location, '/thanks');
   assert.equal(calls.length, 0);
+});
+
+await test('JSON honeypot: fake success without an id, no API call', async () => {
+  const r = await post({ email: 'bot@spam.co', company: 'Acme' });
+  assert.deepEqual(JSON.parse(r.body), { ok: true });
+  assert.equal(calls.length, 0);
+});
+
+await test('submitted under 2 seconds: fake success, no API call', async () => {
+  let r = await post({ email: 'fast@bot.co', elapsed: '900' });
+  assert.equal(r.status, 200);
+  assert.deepEqual(JSON.parse(r.body), { ok: true });
+  r = await form({ email: 'fast@bot.co', source: 'join', elapsed: '1999' });
+  assert.equal(r.headers.location, '/thanks');
+  assert.equal(calls.length, 0);
+});
+
+await test('no timing (script never ran): no API call, visible error', async () => {
+  let r = await request(new URLSearchParams({ email: 'a@b.co', source: 'join' }).toString(), { 'Content-Type': 'application/x-www-form-urlencoded' });
+  assert.equal(r.headers.location, '/join?error=1');
+  r = await request(JSON.stringify({ email: 'a@b.co', elapsed: 'soon' }), { 'Content-Type': 'application/json' });
+  assert.equal(r.status, 400);
+  assert.equal(calls.length, 0);
+});
+
+await test('overlong inputs are capped before they reach Beehiiv', async () => {
+  await post({ email: 'a@b.co', utm_source: 'x'.repeat(5000), referring_site: 'y'.repeat(5000), zip: '9'.repeat(100) });
+  assert.equal(calls[0].body.utm_source.length, 200);
+  assert.equal(calls[0].body.referring_site.length, 500);
+  assert.deepEqual(calls[0].body.custom_fields[0], { name: 'zip', value: '99999' });
 });
 
 await test('invalid email: no API call, 303 back to the form page with ?error=1', async () => {
@@ -136,7 +168,7 @@ await test('the API key is never logged', async () => {
 
 await test('JSON failure returns ok:false', async () => {
   beehiivStatus = 503;
-  const r = await request(JSON.stringify({ email: 'a@b.co' }), { 'Content-Type': 'application/json' });
+  const r = await post({ email: 'a@b.co' });
   assert.equal(r.status, 502);
   assert.equal(JSON.parse(r.body).ok, false);
 });

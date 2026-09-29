@@ -3,24 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Check your inbox | KirkaDay</title>
-<meta name="description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
+<title>Welcome to the build | KirkaDay</title>
+<meta name="description" content="You're on the list for the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://kirka.day/thanks">
 <meta name="theme-color" content="#C8102E">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KirkaDay">
-<meta property="og:title" content="Check your inbox | KirkaDay">
-<meta property="og:description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
+<meta property="og:title" content="Welcome to the build | KirkaDay">
+<meta property="og:description" content="You're on the list for the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
 <meta property="og:url" content="https://kirka.day/thanks">
 <meta property="og:image" content="https://kirka.day/og-image-1200x630.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The KirkaDay logo, a hibiscus symbol and wordmark, framed by the KirkaDay hibiscus pattern">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Check your inbox | KirkaDay">
-<meta name="twitter:description" content="Almost there: confirm your email to get the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
+<meta name="twitter:title" content="Welcome to the build | KirkaDay">
+<meta name="twitter:description" content="You're on the list for the KirkaDay Sunday email. Sparkling hibiscus energy, launching Spring 2027 in Houston.">
 <meta name="twitter:image" content="https://kirka.day/og-image-1200x630.png">
 
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -35,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-  /* /thanks only: get people to the confirmation email, then what comes next. */
+  /* /thanks only: point people to the welcome email, ask the go-to-drink poll, then what comes next. */
   .kd-ty-lead { margin-bottom: 26px; }
   .kd-ty-open { margin: 0 0 20px; }
   .kd-ty-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px;
@@ -56,6 +56,22 @@
                    margin: 4px 0 4px; }
   .kd-step-text { font-family:var(--kd-font-body); font-size: 16px; line-height: 1.5; color: var(--kd-ink-soft); margin: 0; }
 
+  .kd-poll { margin: 30px 0 0; }
+  .kd-poll-q { font-family: var(--kd-font-display); font-weight: 700; font-size: clamp(19px, 2vw, 23px); line-height: 1.3;
+               letter-spacing: 0.02em; color: var(--kd-ink); margin: 0 0 18px; }
+  .kd-poll-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .kd-chip { min-height: 44px; padding: 10px 18px; border: 1px solid rgba(189,155,96,0.8); border-radius: 999px;
+             background: var(--kd-white); color: var(--kd-ink); font-size: 15px; cursor: pointer;
+             transition: border-color .2s ease, background .2s ease, color .2s ease; }
+  .kd-chip:hover { border-color: var(--kd-red); color: var(--kd-red); }
+  .kd-chip[aria-expanded="true"] { background: var(--kd-red); border-color: var(--kd-red); color: var(--kd-white); }
+  .kd-chip:focus-visible { outline: 2px solid var(--kd-deep); outline-offset: 2px; }
+  .kd-poll-other { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; max-width: 420px; }
+  .kd-poll-other[hidden] { display: none; }
+  .kd-poll-other .kd-input { flex: 1 1 200px; padding: 11px 16px; }
+  .kd-poll-other .kd-btn { min-height: 44px; padding: 12px 24px; }
+  .kd-poll-done { font-size: 17px; line-height: 1.6; color: var(--kd-ink); margin: 0; }
+  .kd-poll-done strong { font-weight: 500; color: var(--kd-red); }
   .kd-ty-share-url { margin: 12px 0 0; max-width: 560px; }
   .kd-ty-share-url .kd-input { width: 100%; font-size: 13px; }
   .kd-ty-note { display: flex; gap: 20px; align-items: flex-start; margin: 40px 0 0; }
@@ -102,17 +118,39 @@
 <main class="kd-page">
   <div class="kd-wrap">
     <img class="kd-page-mark" src="/assets/brand/KirkaDay_Icon_Web_Metallic.svg" alt="" width="935" height="935">
-    <p class="kd-eyebrow">One more step</p>
-    <h1 class="kd-title">Check your inbox to confirm.</h1>
-    <p class="kd-lead kd-ty-lead">I just sent you a confirmation email from Aimen Alt (hello@kirka.day). Tap Confirm and you're in.</p>
-    <p class="kd-ty-open" data-mail hidden><a class="kd-btn kd-ty-btn" href="/" target="_blank" rel="noopener" data-mail-link>Open your inbox</a></p>
-    <p class="kd-ty-muted">Not there in 2 minutes? Check Spam or Promotions. If it's there, move it to your inbox so Sunday's email lands in the right place.</p>
+    <p class="kd-eyebrow">You're in</p>
+    <h1 class="kd-title">Welcome to the build.</h1>
+    <p class="kd-lead kd-ty-lead">Your welcome email from Aimen Alt (hello@kirka.day) is on its way. Your first build log lands Sunday.</p>
+    <p class="kd-ty-open" data-mail hidden><a class="kd-btn kd-ty-btn" href="/" target="_blank" rel="noopener" data-mail-link>Find my welcome email</a></p>
+    <p class="kd-ty-muted">Don't see it? Check Spam or Promotions and move it to your inbox so Sunday's email lands in the right place.</p>
+
+    <section class="kd-card kd-poll" data-poll hidden aria-labelledby="poll-q">
+      <div data-poll-ask>
+        <p class="kd-eyebrow">Quick question</p>
+        <h2 class="kd-poll-q" id="poll-q">What's your go-to drink right now?</h2>
+        <div class="kd-poll-chips" role="group" aria-labelledby="poll-q">
+          <button class="kd-chip" type="button" data-drink="Coffee">Coffee</button>
+          <button class="kd-chip" type="button" data-drink="Energy drink">Energy drink</button>
+          <button class="kd-chip" type="button" data-drink="Soda">Soda</button>
+          <button class="kd-chip" type="button" data-drink="Tea">Tea</button>
+          <button class="kd-chip" type="button" data-drink="Sparkling water">Sparkling water</button>
+          <button class="kd-chip" type="button" data-drink="Juice">Juice</button>
+          <button class="kd-chip" type="button" data-drink="Other" aria-expanded="false" aria-controls="poll-other">Other</button>
+        </div>
+        <form class="kd-poll-other" id="poll-other" data-poll-other hidden>
+          <label class="kd-sr" for="poll-other-text">Your go-to drink</label>
+          <input class="kd-input" id="poll-other-text" type="text" maxlength="40" autocomplete="off" placeholder="Your go-to drink" required>
+          <button class="kd-btn" type="submit">Save</button>
+        </form>
+      </div>
+      <p class="kd-poll-done" data-poll-done role="status" hidden></p>
+    </section>
 
     <hr class="kd-rule">
     <p class="kd-eyebrow">What happens next</p>
     <ol class="kd-steps">
-      <li><span class="kd-step-num" aria-hidden="true">1</span><h2 class="kd-step-title">Confirm your email</h2><p class="kd-step-text">Takes one tap.</p></li>
-      <li><span class="kd-step-num" aria-hidden="true">2</span><h2 class="kd-step-title">Welcome email</h2><p class="kd-step-text">A quick hello from me, right after you confirm.</p></li>
+      <li><span class="kd-step-num" aria-hidden="true">1</span><h2 class="kd-step-title">You're on the list</h2><p class="kd-step-text">Done.</p></li>
+      <li><span class="kd-step-num" aria-hidden="true">2</span><h2 class="kd-step-title">Welcome email</h2><p class="kd-step-text">On its way right now.</p></li>
       <li><span class="kd-step-num" aria-hidden="true">3</span><h2 class="kd-step-title">First build log</h2><p class="kd-step-text">Every Sunday. 2 minutes. What worked, what broke.</p></li>
     </ol>
 
@@ -179,7 +217,8 @@
   })();
 </script>
 <script>
-  /* Open-your-inbox button from the domain the signup form saved, plus the share button. */
+  /* Find-my-welcome-email button from the domain the signup form saved, the
+     go-to-drink poll (only with a subscription id), and the share button. */
   (function () {
     var MAIL = {
       gmail: ['Open Gmail', 'https://mail.google.com/mail/u/0/#search/from%3Ahello%40kirka.day+in%3Aanywhere'],
@@ -199,9 +238,56 @@
     var wrap = document.querySelector('[data-mail]');
     var link = document.querySelector('[data-mail-link]');
     if (mail && wrap && link) {
-      link.textContent = mail[0];
+      // The label stays "Find my welcome email"; the provider goes in the accessible name.
+      link.setAttribute('aria-label', 'Find my welcome email in ' + mail[0].replace(/^Open /, '') + ' (opens in a new tab)');
       link.href = mail[1];
       wrap.hidden = false;
+    }
+
+    // Poll: answers go to /api/drink. The thank-you shows even if saving fails.
+    var sid = '';
+    try { sid = sessionStorage.getItem('kd_sid') || ''; } catch (e) {}
+    var poll = document.querySelector('[data-poll]');
+    if (poll && window.fetch && /^sub_[0-9a-f-]{36}$/i.test(sid)) {
+      var ask = poll.querySelector('[data-poll-ask]');
+      var done = poll.querySelector('[data-poll-done]');
+      var otherForm = poll.querySelector('[data-poll-other]');
+      var otherText = otherForm.querySelector('input');
+      var otherChip = poll.querySelector('[data-drink="Other"]');
+      var answer = function (drink, other) {
+        done.textContent = '';
+        done.appendChild(document.createTextNode('Got it: '));
+        var b = document.createElement('strong');
+        b.textContent = drink === 'Other' ? other : drink;
+        done.appendChild(b);
+        done.appendChild(document.createTextNode(". I'll share what everyone said in a build log."));
+        ask.hidden = true;
+        done.hidden = false;
+        fetch('/api/drink', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ sid: sid, drink: drink, other: other || '' })
+        }).then(function (r) {
+          if (!r.ok) throw new Error('drink save failed: ' + r.status);
+        }).catch(function (err) { console.error('[poll]', err); });
+      };
+      Array.prototype.forEach.call(poll.querySelectorAll('[data-drink]'), function (chip) {
+        chip.addEventListener('click', function () {
+          var drink = chip.getAttribute('data-drink');
+          if (drink !== 'Other') return answer(drink);
+          var open = otherForm.hidden;
+          otherForm.hidden = !open;
+          otherChip.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) otherText.focus();
+        });
+      });
+      otherForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var v = otherText.value.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 40);
+        if (!v) { otherText.focus(); return; }
+        answer('Other', v);
+      });
+      poll.hidden = false;
     }
 
     var SHARE_URL = 'https://kirka.day/join?utm_source=share&utm_medium=thanks';
