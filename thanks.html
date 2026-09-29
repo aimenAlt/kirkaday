@@ -68,8 +68,19 @@
   .kd-chip:focus-visible { outline: 2px solid var(--kd-deep); outline-offset: 2px; }
   .kd-poll-other { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 0; max-width: 420px; }
   .kd-poll-other[hidden] { display: none; }
-  .kd-poll-other .kd-input { flex: 1 1 200px; padding: 11px 16px; }
-  .kd-poll-other .kd-btn { min-height: 44px; padding: 12px 24px; }
+  .kd-poll-other .kd-input, .kd-poll-row .kd-input { flex: 1 1 200px; min-height: 44px; padding: 11px 16px; }
+  .kd-poll-other .kd-btn, .kd-poll-row .kd-btn { min-height: 44px; padding: 12px 24px; }
+  .kd-poll-detail[hidden] { display: none; }
+  .kd-poll-detail .kd-eyebrow { margin-bottom: 12px; }
+  .kd-poll-detail label { display: block; font-family: var(--kd-font-display); font-weight: 600; font-size: clamp(18px, 1.8vw, 21px);
+                          line-height: 1.3; letter-spacing: 0.02em; color: var(--kd-ink); margin: 0 0 14px; }
+  .kd-poll-row { display: flex; flex-wrap: wrap; gap: 10px; max-width: 480px; }
+  .kd-poll-row .kd-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+  .kd-poll-row .kd-btn[disabled]:hover { background: var(--kd-red); }
+  .kd-poll-skip { display: inline-flex; align-items: center; min-height: 44px; margin: 6px 0 0; padding: 0 2px; border: 0;
+                  background: none; cursor: pointer; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+                  color: var(--kd-deep); text-decoration: underline; text-decoration-color: rgba(189,155,96,0.8); text-underline-offset: 4px; }
+  .kd-poll-skip:hover { color: var(--kd-red); }
   .kd-poll-done { font-size: 17px; line-height: 1.6; color: var(--kd-ink); margin: 0; }
   .kd-poll-done strong { font-weight: 500; color: var(--kd-red); }
   .kd-ty-share-url { margin: 12px 0 0; max-width: 560px; }
@@ -143,6 +154,15 @@
           <button class="kd-btn" type="submit">Save</button>
         </form>
       </div>
+      <form class="kd-poll-detail" data-poll-detail hidden>
+        <p class="kd-eyebrow" data-poll-choice></p>
+        <label for="poll-detail-text" data-poll-detail-q>Which one?</label>
+        <div class="kd-poll-row">
+          <input class="kd-input" id="poll-detail-text" type="text" maxlength="60" autocomplete="off" placeholder="Type it here">
+          <button class="kd-btn" type="submit" disabled>Save</button>
+        </div>
+        <button class="kd-poll-skip" type="button" data-poll-skip>Skip</button>
+      </form>
       <p class="kd-poll-done" data-poll-done role="status" hidden></p>
     </section>
 
@@ -254,23 +274,58 @@
       var otherForm = poll.querySelector('[data-poll-other]');
       var otherText = otherForm.querySelector('input');
       var otherChip = poll.querySelector('[data-drink="Other"]');
-      var answer = function (drink, other) {
-        done.textContent = '';
-        done.appendChild(document.createTextNode('Got it: '));
-        var b = document.createElement('strong');
-        b.textContent = drink === 'Other' ? other : drink;
-        done.appendChild(b);
-        done.appendChild(document.createTextNode(". I'll share what everyone said in a build log."));
-        ask.hidden = true;
-        done.hidden = false;
+      var detailForm = poll.querySelector('[data-poll-detail]');
+      var detailText = detailForm.querySelector('input');
+      var detailSave = detailForm.querySelector('button[type="submit"]');
+      // Optional second step, worded for the chip. "Other" skips it: they already typed it.
+      var FOLLOW_UP = {
+        'Energy drink': 'Which one?', 'Soda': 'Which one?', 'Sparkling water': 'Which one?', 'Juice': 'Which one?',
+        'Coffee': 'Where from, or how do you take it?', 'Tea': 'What kind?'
+      };
+      var clean = function (v, max) { return v.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, max).trim(); };
+      var save = function (body) {
+        body.sid = sid;
         fetch('/api/drink', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ sid: sid, drink: drink, other: other || '' })
+          body: JSON.stringify(body)
         }).then(function (r) {
           if (!r.ok) throw new Error('drink save failed: ' + r.status);
         }).catch(function (err) { console.error('[poll]', err); });
       };
+      var finish = function (label, detail) {
+        done.textContent = '';
+        done.appendChild(document.createTextNode('Got it: '));
+        var b = document.createElement('strong');
+        b.textContent = label;
+        done.appendChild(b);
+        if (detail) done.appendChild(document.createTextNode(' (' + detail + ')'));
+        done.appendChild(document.createTextNode(". I'll share what everyone said in a build log."));
+        ask.hidden = true;
+        detailForm.hidden = true;
+        done.hidden = false;
+      };
+      var choice = '';
+      var answer = function (drink, other) {
+        save({ drink: drink, other: other || '' });
+        if (drink === 'Other' || !FOLLOW_UP[drink]) return finish(drink === 'Other' ? other : drink);
+        choice = drink;
+        poll.querySelector('[data-poll-choice]').textContent = drink;
+        poll.querySelector('[data-poll-detail-q]').textContent = FOLLOW_UP[drink];
+        ask.hidden = true;
+        detailForm.hidden = false;
+        // Focus without scrolling so the page doesn't jump on phones.
+        try { detailText.focus({ preventScroll: true }); } catch (e) { detailText.focus(); }
+      };
+      detailText.addEventListener('input', function () { detailSave.disabled = !clean(detailText.value, 60); });
+      detailForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var v = clean(detailText.value, 60);
+        if (!v) { detailText.focus({ preventScroll: true }); return; }
+        save({ detail: v });
+        finish(choice, v);
+      });
+      poll.querySelector('[data-poll-skip]').addEventListener('click', function () { finish(choice); });
       Array.prototype.forEach.call(poll.querySelectorAll('[data-drink]'), function (chip) {
         chip.addEventListener('click', function () {
           var drink = chip.getAttribute('data-drink');
@@ -278,13 +333,13 @@
           var open = otherForm.hidden;
           otherForm.hidden = !open;
           otherChip.setAttribute('aria-expanded', open ? 'true' : 'false');
-          if (open) otherText.focus();
+          if (open) { try { otherText.focus({ preventScroll: true }); } catch (e) { otherText.focus(); } }
         });
       });
       otherForm.addEventListener('submit', function (ev) {
         ev.preventDefault();
-        var v = otherText.value.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim().slice(0, 40);
-        if (!v) { otherText.focus(); return; }
+        var v = clean(otherText.value, 40);
+        if (!v) { otherText.focus({ preventScroll: true }); return; }
         answer('Other', v);
       });
       poll.hidden = false;

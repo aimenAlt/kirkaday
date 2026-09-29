@@ -9,8 +9,8 @@ Pre-launch site for KirkaDay, served at https://kirka.day (Vercel, production br
   welcome email sent; bots filtered by honeypot and a 2-second minimum on the form). Needs `BEEHIIV_API_KEY` set in the Vercel
   project's environment variables (optional `BEEHIIV_PUBLICATION_ID`). Beehiiv custom fields
   `zip` and `source` must exist on the publication.
-- `api/drink.js`: saves the /thanks go-to-drink poll answer to the subscriber's `go_to_drink`
-  custom field (created on first use if missing). Same env vars.
+- `api/drink.js`: saves the /thanks go-to-drink poll answers to the subscriber's `go_to_drink` and
+  optional `go_to_drink_detail` custom fields (each created on first use if missing). Same env vars.
 - Latest video on the home page: set `LATEST_YOUTUBE_ID` at the top of the page script in `index.html`.
 - Wholesale form: Tally form `aQ7Q7W`, embedded on `/wholesale`.
 

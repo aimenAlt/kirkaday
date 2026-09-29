@@ -72,7 +72,8 @@ async function test(name, fn) {
 await test('a chip answer is saved on the subscription and read back', async () => {
   const r = await post({ sid: SID, drink: 'Sparkling water' });
   assert.equal(r.status, 200);
-  assert.deepEqual(r.body, { ok: true, drink: 'Sparkling water', saved: true, status: 'active' });
+  assert.deepEqual(r.body, { ok: true, field: 'go_to_drink', value: 'Sparkling water', saved: true,
+    fields: { go_to_drink: 'Sparkling water' }, status: 'active' });
   const put = calls.find((c) => c.method === 'PUT');
   assert.deepEqual(put.body, { custom_fields: [{ name: 'go_to_drink', value: 'Sparkling water' }] });
   assert.equal(put.auth, 'Bearer test-key-not-real');
@@ -94,9 +95,23 @@ await test('creates the go_to_drink field once when the publication lacks it', a
 await test('Other: tags stripped, trimmed, capped at 40, stored as "Other: ..."', async () => {
   const r = await post({ sid: SID, drink: 'Other', other: '  <b>Hibiscus</b>\n tea <script>x</script>' + ' iced'.repeat(20) });
   assert.equal(r.status, 200);
-  assert.ok(r.body.drink.startsWith('Other: Hibiscus tea x iced'));
-  assert.ok(r.body.drink.length <= 'Other: '.length + 40);
+  assert.ok(r.body.value.startsWith('Other: Hibiscus tea x iced'));
+  assert.ok(r.body.value.length <= 'Other: '.length + 40);
   assert.ok(!/[<>]/.test(stored.go_to_drink));
+});
+
+await test('step 2: detail saved to go_to_drink_detail (field created once), sanitized to 60 chars', async () => {
+  await post({ sid: SID, drink: 'Energy drink' });
+  let r = await post({ sid: SID, detail: '  <em>test</em>   brand ' });
+  assert.equal(r.status, 200);
+  assert.equal(r.body.field, 'go_to_drink_detail');
+  assert.deepEqual(r.body.fields, { go_to_drink: 'Energy drink', go_to_drink_detail: 'test brand' });
+  assert.equal(r.body.saved, true);
+  const creates = calls.filter((c) => c.url === BASE + '/custom_fields' && c.method === 'POST');
+  assert.deepEqual(creates.map((c) => c.body), [{ kind: 'string', display: 'go_to_drink_detail' }]);
+  r = await post({ sid: SID, detail: 'x'.repeat(200) });
+  assert.equal(stored.go_to_drink_detail.length, 60);
+  assert.equal(calls.filter((c) => c.url === BASE + '/custom_fields' && c.method === 'POST').length, 1);
 });
 
 await test('rejects bad sids, unknown drinks and empty Other without calling Beehiiv', async () => {
@@ -106,6 +121,8 @@ await test('rejects bad sids, unknown drinks and empty Other without calling Bee
     { sid: SID, drink: 'Beer' },
     { sid: SID, drink: 'coffee' },
     { sid: SID, drink: 'Other', other: ' <i></i> ' },
+    { sid: SID, detail: '  <b></b> ' },
+    { sid: SID },
     'not json',
   ]) {
     const r = await post(body);
